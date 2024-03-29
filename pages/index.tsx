@@ -1,15 +1,17 @@
-import Background from '@/assets/milkyway';
 import Nav from '@/components/Nav';
-import "./globals.css";
+import './globals.css';
 
 export default function Page() {
   return (
-    <main
-      className={`w-full flex min-h-screen flex-col items-start relative px-[80px] py-[40px]`}
-    >
-      <Background />
-      <div className="w-full h-full bg-gradient-to-r from-[#04091eb3] to-[#04091eb3] absolute opacity-[0.1] left-0 top-0" />
-      <Nav />
+    <main className={`w-full flex flex-col items-start relative`}>
+      <div className="w-full flex min-h-screen flex-col items-start relative bg-gradient-overlay px-[80px]">
+        <Nav />
+        <div>
+          <p className="text-white">
+            Tech is our business and business is good
+          </p>
+        </div>
+      </div>
     </main>
   );
 }

@@ -16,6 +16,12 @@
   }
 }
 
+.bg-gradient-overlay {
+  background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)),
+    url('../public/bg.jpg');
+  background-size: cover;
+  background-position: center;
+}
 
 /* body {
   color: rgb(var(--foreground-rgb));
