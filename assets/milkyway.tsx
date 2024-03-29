@@ -16,6 +16,7 @@ export default function Background() {
         height: '100%',
         objectFit: 'cover',
         backgroundPosition: 'center',
+        zIndex: 1,
       }}
     />
   );
