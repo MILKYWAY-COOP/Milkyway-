@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -21,6 +23,26 @@
     url('../public/bg.jpg');
   background-size: cover;
   background-position: center;
+}
+
+/* Style for the list item */
+.li-hover:hover .bracket {
+  opacity: 1;
+  transform: translateX(5px); /* Moves to the right by 5px */
+  transition: opacity 0.2s ease-out, transform 0.5s ease-out;
+}
+
+/* Style for the closing bracket */
+.bracket {
+  position: absolute;
+  opacity: 0; /* Initially hidden */
+  transform: translateX(-10px); /* Starts off 10px to the left */
+  transition: opacity 0.2s ease-out, transform 0.5s ease-out;
+}
+
+.mw-bg {
+  background: linear-gradient(rgb(45 170 225 / 0.37), rgb(45 170 225 / 0.37)),
+    url(../public/milkywaybackground.webp);
 }
 
 /* body {
