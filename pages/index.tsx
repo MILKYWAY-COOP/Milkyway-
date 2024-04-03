@@ -10,8 +10,10 @@ export default function Page() {
   const delayValue = 0.5;
 
   return (
-    <div className={`w-full flex flex-col items-start relative mw-bg gap-[40px] pb-[60px]`}>
-      <div className="w-full flex min-h-screen flex-col items-start relative bg-gradient-overlay px-[80px]">
+    <div
+      className={`w-full flex flex-col items-start relative mw-bg gap-[40px] pb-[60px]`}
+    >
+      <div className="w-full flex min-h-screen flex-col items-start relative bg-custom-bg px-[80px] bg-cover bg-center">
         <Nav />
         <div className="w-full h-[calc(100vh-149.219px)] flex flex-col items-center overflow-hidden gap-[60px]">
           <motion.div variants={slideInFromLeft(delayValue)}>

@@ -8,7 +8,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {},
+      backgroundImage: {
+        'custom-bg':
+          "linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url('../public/bg.jpg')",
+      },
       colors: {
         white: '#ffffff',
         darkBlue: 'rgba(4, 3, 57, 0.7)',
