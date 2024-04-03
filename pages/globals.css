@@ -20,7 +20,7 @@
 
 .bg-gradient-overlay {
   background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)),
-    url('../public/bg.jpg');
+    url(../public/bg.jpg);
   background-size: cover;
   background-position: center;
 }
@@ -40,10 +40,10 @@
   transition: opacity 0.2s ease-out, transform 0.5s ease-out;
 }
 
-/* .mw-bg {
+.mw-bg {
   background: linear-gradient(rgb(45 170 225 / 0.37), rgb(45 170 225 / 0.37)),
     url(../public/milkywaybackground.webp);
-} */
+}
 
 body::-webkit-scrollbar {
   width: 5px;
