@@ -10,7 +10,7 @@ const config: Config = {
     extend: {
       backgroundImage: {
         'custom-bg':
-          "linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url('../public/bg.jpg')",
+          "linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url('https://github.com/MILKYWAY-COOP/MilkyWay/blob/main/images/img1.jpg?raw=true')",
       },
       colors: {
         white: '#ffffff',
