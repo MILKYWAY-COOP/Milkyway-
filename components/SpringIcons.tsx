@@ -21,8 +21,6 @@ import { distance } from '@popmotion/popcorn';
 
 const size = 60;
 const gap = 10;
-// const distance = (a: any, b: any) =>
-//   Math.sqrt((a.x - b.x) ** 2 + (a.y - b.y) ** 2);
 
 const Square = ({
   active,
