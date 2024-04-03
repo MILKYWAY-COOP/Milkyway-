@@ -45,6 +45,17 @@
     url(../public/milkywaybackground.webp);
 }
 
+body::-webkit-scrollbar {
+  width: 5px;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: rgba(4, 3, 57, 0.7);
+  border-radius: 8px;
+}
+body::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(4, 3, 57, 0.7);
+}
+
 /* body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
