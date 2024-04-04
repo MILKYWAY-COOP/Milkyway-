@@ -22,7 +22,7 @@ export default function Cards() {
       )}
 
       <h1 className="text-2xl font-[500] mb-4 text-center font-comfota text-white">
-        We work with a variety of technologies, including but not confined to:
+        We work with a variety of technologies, including but not limited to:
       </h1>
       <div className="relative w-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
         {categories.map((category, index) => (
@@ -34,7 +34,7 @@ export default function Cards() {
                 ? setSelectedId(index.toString())
                 : setSelectedId(null);
             }}
-            className="bg-white rounded-lg p-4 md:w-[250px] sm:h-[250px] overflow-hidden relative cursor-pointer"
+            className="bg-white rounded-lg p-4 md:w-[350px] sm:h-[250px] overflow-hidden relative cursor-pointer"
           >
             <motion.h2 className="font-bold text-lg mb-2">
               {category.name}
