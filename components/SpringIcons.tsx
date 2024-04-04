@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { useState } from 'react';
+import Image from 'next/image';
 import { motion, useMotionValue, useSpring } from 'framer-motion';
 import {
   SiJavascript,
@@ -18,6 +19,8 @@ import {
 import { FaNode, FaVuejs, FaAws } from 'react-icons/fa';
 import { TbBrandNextjs, TbBrandReactNative } from 'react-icons/tb';
 import { distance } from '@popmotion/popcorn';
+import NIcon from '@/assets/nextjs.svg';
+import Native from '@/assets/native.svg';
 
 const size = 60;
 const gap = 10;
@@ -72,12 +75,20 @@ const Square = ({
         borderRadius: '5%',
       }}
     >
-      <Icon
-        style={{
-          fill: `white`,
-        }}
-        size="70px"
-      />
+      {typeof Icon === 'function' ? (
+        <Icon
+          style={{
+            fill: `turquoise`,
+          }}
+          size="70px"
+        />
+      ) : (
+        <Image
+          src={Icon}
+          alt="Next.js Logo"
+          style={{ width: '70px', height: '70px', fill: 'turquoise' }}
+        />
+      )}
     </motion.div>
   );
 };
@@ -91,7 +102,7 @@ export default function SpringIcons() {
     [SiJavascript],
     [FaNode, SiTypescript],
     [SiPrisma, SiStrapi, SiReact],
-    [TbBrandNextjs, TbBrandReactNative, SiNestjs, FaVuejs],
+    [NIcon, TbBrandReactNative, SiNestjs, FaVuejs],
     [SiPostgresql, SiMysql, SiMongodb, SiFirebase, FaAws],
     [SiGooglecloud, SiTailwindcss],
   ];
