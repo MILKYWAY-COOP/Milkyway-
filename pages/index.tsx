@@ -1,17 +1,55 @@
+import { useEffect } from 'react';
 import Nav from '@/components/Nav';
 import SpringIcons from '@/components/SpringIcons';
 import Cards from '@/components/Cards';
+import CubeComponent from '@/components/cube';
 import './globals.css';
 
-import { motion } from 'framer-motion';
+import { motion, useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 import { slideInFromLeft } from '@/utils/motion';
+
+function FadeInWhenVisible({ children }: any) {
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      controls.start('visible');
+    }
+  }, [controls, inView]);
+
+  return (
+    <motion.div
+      ref={ref}
+      animate={controls}
+      initial="hidden"
+      transition={{ duration: 0.3 }}
+      variants={{
+        hidden: {
+          opacity: 0,
+          y: 30,
+        },
+        visible: {
+          opacity: 1,
+          y: 0,
+          transition: {
+            duration: 0.5,
+          },
+        },
+      }}
+    >
+      {children}
+    </motion.div>
+  );
+}
 
 export default function Page() {
   const delayValue = 0.5;
 
   return (
     <div
-      className={`w-full flex flex-col items-start relative mw-bg gap-[40px] pb-[60px]`}
+      className={`w-full flex flex-col items-start relative mw-bg gap-[80px] pb-[60px]`}
     >
       <div className="w-full flex min-h-screen flex-col items-start relative bg-custom-bg lg:px-[80px] md:px-[60px] sm:px-[40px] px-[20px] bg-cover bg-center">
         <Nav />
@@ -28,8 +66,11 @@ export default function Page() {
         </div>
       </div>
       <div className="w-full flex flex-col items-center lg:px-[80px] sm:px-[20px]">
-        <Cards />
+        <FadeInWhenVisible>
+          <Cards />
+        </FadeInWhenVisible>
       </div>
+      <CubeComponent />
     </div>
   );
 }
