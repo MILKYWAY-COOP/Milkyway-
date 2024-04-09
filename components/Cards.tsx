@@ -74,40 +74,42 @@ export default function Cards() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className={`rounded-lg p-4 absolute z-30 min-w-[400px] animate-bg`}
+              className={`absolute z-30 min-w-[400px] bg-[url('../public/bg.png')] `}
               style={{
                 top: '20%',
                 left: '40%',
                 transform: 'translate(-20%, -40%)',
               }}
             >
-              <motion.div className="w-full flex justify-end">
-                <motion.button
-                  className="cursor-pointer w-[35px] h-[35px] rounded-3xl absolute flex justify-center align-center"
-                  onClick={() => setSelectedId(null)}
-                >
-                  <IoClose fill="#fff" size={25} />
-                </motion.button>
-              </motion.div>
-
-              <motion.ul className="flex flex-col gap-[16px]">
-                <motion.div className="flex align-center gap-[16px]">
-                  <IconComponent width={48} height={48} fill="#fff" />
-                  <motion.h2 className="text-white text-[24px]">
-                    {categories[parseInt(selectedId)].name}
-                  </motion.h2>
+              <motion.div className="animate-bg inset-0 rounded-lg p-4">
+                <motion.div className="w-full flex justify-end">
+                  <motion.button
+                    className="cursor-pointer w-[35px] h-[35px] rounded-3xl absolute flex justify-center align-center"
+                    onClick={() => setSelectedId(null)}
+                  >
+                    <IoClose fill="#fff" size={25} />
+                  </motion.button>
                 </motion.div>
-                {categories[parseInt(selectedId)].technologies.map(
-                  (tech, techIndex) => (
-                    <motion.li key={techIndex}>
-                      <TiTick className="inline-block mr-2" fill="#FFCC00" />
-                      <motion.span className="text-white text-[20px]">
-                        {tech}
-                      </motion.span>
-                    </motion.li>
-                  )
-                )}
-              </motion.ul>
+
+                <motion.ul className="flex flex-col gap-[16px]">
+                  <motion.div className="flex align-center gap-[16px]">
+                    <IconComponent width={48} height={48} fill="#fff" />
+                    <motion.h2 className="text-white text-[24px]">
+                      {categories[parseInt(selectedId)].name}
+                    </motion.h2>
+                  </motion.div>
+                  {categories[parseInt(selectedId)].technologies.map(
+                    (tech, techIndex) => (
+                      <motion.li key={techIndex}>
+                        <TiTick className="inline-block mr-2" fill="#FFCC00" />
+                        <motion.span className="text-white text-[20px]">
+                          {tech}
+                        </motion.span>
+                      </motion.li>
+                    )
+                  )}
+                </motion.ul>
+              </motion.div>
             </motion.div>
           )}
         </AnimatePresence>

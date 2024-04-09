@@ -13,7 +13,7 @@ export default function Page() {
 
   return (
     <div
-      className={`w-full flex flex-col items-start relative mw-bg gap-[160px] pb-[60px]`}
+      className={`w-full flex flex-col items-start relative bg-[url('../public/bg.png')] gap-[160px] pb-[60px]`}
     >
       <div className="w-full flex min-h-screen flex-col items-start relative bg-custom-bg lg:px-[80px] md:px-[60px] sm:px-[40px] px-[20px] bg-cover bg-center">
         <Nav />
