@@ -4,6 +4,7 @@ import { categories } from '@/data/data';
 import { IoClose } from 'react-icons/io5';
 import { TiTick } from 'react-icons/ti';
 import FadeInWhenVisible from '@/utils/fadeInWhenVisible';
+import { slideInFromLeft } from '@/utils/motion';
 
 export default function Cards() {
   const [selectedId, setSelectedId] = useState<string | null>(null);
@@ -74,7 +75,7 @@ export default function Cards() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className={`absolute z-30 min-w-[400px] bg-stars `}
+              className={`absolute z-30 min-w-[400px] bg-stars overflow-hidden`}
               style={{
                 top: '20%',
                 left: '40%',
@@ -91,7 +92,7 @@ export default function Cards() {
                   </motion.button>
                 </motion.div>
 
-                <motion.ul className="flex flex-col gap-[16px]">
+                <motion.ul className="flex flex-col gap-[16px]" initial="hidden" animate="visible">
                   <motion.div className="flex align-center gap-[16px]">
                     <IconComponent width={48} height={48} fill="#fff" />
                     <motion.h2 className="text-white text-[24px]">
@@ -100,7 +101,10 @@ export default function Cards() {
                   </motion.div>
                   {categories[parseInt(selectedId)].technologies.map(
                     (tech, techIndex) => (
-                      <motion.li key={techIndex}>
+                      <motion.li
+                        key={techIndex}
+                        variants={slideInFromLeft(0.15 * techIndex)}
+                      >
                         <TiTick className="inline-block mr-2" fill="#FFCC00" />
                         <motion.span className="text-white text-[20px]">
                           {tech}

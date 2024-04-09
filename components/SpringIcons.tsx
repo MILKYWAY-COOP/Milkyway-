@@ -20,7 +20,6 @@ import { FaNode, FaVuejs, FaAws } from 'react-icons/fa';
 import { TbBrandNextjs, TbBrandReactNative } from 'react-icons/tb';
 import { distance } from '@popmotion/popcorn';
 import NIcon from '@/assets/nextjs.svg';
-import Native from '@/assets/native.svg';
 
 const size = 60;
 const gap = 10;
