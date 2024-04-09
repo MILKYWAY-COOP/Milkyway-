@@ -1,3 +1,10 @@
+import FrontEndIcon from '@/assets/frontEnd';
+import BackEndIcon from '@/assets/backEnd';
+import ServersDevOpsIcon from '@/assets/devOps';
+import DatabaseIcon from '@/assets/database';
+import SourceControlIcon from '@/assets/sourceControl';
+import ThirdPartyIcon from '@/assets/thirdParty';
+
 const FrontEnd = [
   'JavaScript',
   'TypeScript',
@@ -50,25 +57,31 @@ export const categories = [
   {
     name: 'Front End',
     technologies: FrontEnd,
+    icon: FrontEndIcon,
   },
   {
     name: 'Back End',
     technologies: BackEnd,
+    icon: BackEndIcon,
   },
   {
     name: 'Servers & DevOps',
     technologies: SeversnDevOps,
+    icon: ServersDevOpsIcon,
   },
   {
     name: 'Database',
     technologies: Database,
+    icon: DatabaseIcon,
   },
   {
     name: 'Source Control',
     technologies: scodecontrol,
+    icon: SourceControlIcon,
   },
   {
     name: 'Third Party APIs',
     technologies: thirdPartyAPI,
+    icon: ThirdPartyIcon,
   },
 ];

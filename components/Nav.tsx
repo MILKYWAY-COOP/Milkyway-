@@ -12,23 +12,23 @@ export default function Nav() {
   const navItems = ['Work', 'Blog', 'Giving Back'];
 
   return (
-    <div className="w-full flex flex-col font-comfota">
+    <motion.div className="w-full flex flex-col font-comfota">
       <motion.div
         variants={slideInFromLeft(0.1)}
         className="border-b-[1px] py-[20px] flex gap-4"
       >
-        <p className="text-white pr-4 border-r-[1px] font-comfota">
+        <motion.p className="text-white pr-4 border-r-[1px] font-comfota">
           Need help ? Talk to an expert
-        </p>
-        <p className="text-white">+254 799 710693</p>
+        </motion.p>
+        <motion.p className="text-white">+254 799 710693</motion.p>
       </motion.div>
-      <div className="w-full flex flex-row justify-between py-[30px]">
+      <motion.div className="w-full flex flex-row justify-between py-[30px]">
         <motion.div variants={slideInFromLeft(0.2)} className="">
-          <h2 className="text-white font-bold">MC (Logo)</h2>
+          <motion.h2 className="text-white font-bold">MC (Logo)</motion.h2>
         </motion.div>
         <motion.ul variants={slideInFromRight(0.2)} className="flex gap-5">
           {navItems.map((item) => (
-            <li
+            <motion.li
               key={item}
               className="text-white cursor-pointer"
               onMouseEnter={() => setIsHovered(item)}
@@ -51,10 +51,10 @@ export default function Nav() {
               >
                 ]
               </motion.span>
-            </li>
+            </motion.li>
           ))}
         </motion.ul>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }

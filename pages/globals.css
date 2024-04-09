@@ -41,8 +41,12 @@
 }
 
 .mw-bg {
-  background: linear-gradient(rgb(45 170 225 / 0.37), rgb(45 170 225 / 0.37)),
-    url('../public/milkywaybackground.webp');
+  background: url('../public/bg.png');
+}
+
+.animate-bg {
+  background: linear-gradient(rgba(23, 70, 141, 0.1), rgb(23, 70, 141)),
+    url('../public/bg.png');
 }
 
 body::-webkit-scrollbar {
@@ -65,4 +69,8 @@ body::-webkit-scrollbar-thumb:hover {
     top: 0;
     height: 100vh;
   }
+}
+
+.grid-custom {
+  grid-template-columns: repeat(auto-fill, minmax(376px, 1fr));
 }

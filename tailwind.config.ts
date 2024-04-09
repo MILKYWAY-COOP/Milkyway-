@@ -14,10 +14,14 @@ const config: Config = {
       },
       colors: {
         white: '#ffffff',
-        darkBlue: 'rgba(4, 3, 57, 0.7)',
+        darkBlue: '#15194B',
         fadedDarkBlue: 'rgba(4, 3, 57, 0.9)',
         turquoise: 'rgb(0, 255, 255)',
-        grey: 'rgba(255, 255, 255, 0.7)',
+        grey: '#D2D2D2',
+        greyB: '#C7C7C7',
+        contrast1: '#FFCC00',
+        contrast2: '#15194B',
+        skyBlue: '#17468D',
       },
       fontFamily: {
         comfota: ['Poppins', 'sans-serif'],

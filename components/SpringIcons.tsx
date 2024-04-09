@@ -78,7 +78,7 @@ const Square = ({
       {typeof Icon === 'function' ? (
         <Icon
           style={{
-            fill: `turquoise`,
+            fill: `#FFF`,
           }}
           size="70px"
         />
@@ -86,7 +86,7 @@ const Square = ({
         <Image
           src={Icon}
           alt="Next.js Logo"
-          style={{ width: '70px', height: '70px', fill: 'turquoise' }}
+          style={{ width: '70px', height: '70px', fill: '#FFF' }}
         />
       )}
     </motion.div>
