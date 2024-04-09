@@ -1,9 +1,9 @@
+import { motion } from 'framer-motion';
 import FadeInWhenVisible from '@/utils/fadeInWhenVisible';
 import TopRatedIcon from '@/assets/topRated';
 import SatisfactionIcon from '@/assets/satisfaction';
 import DiscountIcon from '@/assets/discount';
 import DownloadIcon from '@/assets/download';
-import { motion } from 'framer-motion';
 import { slideInFromLeft, slideInFromRight } from '@/utils/motion';
 
 const data = [
@@ -83,7 +83,7 @@ export default function About() {
           </motion.button>
         </motion.div>
       </motion.div>
-      <motion.div className="" variants={slideInFromRight(0.3)}>
+      <motion.div variants={slideInFromRight(0.3)}>
         <motion.video
           autoPlay
           loop

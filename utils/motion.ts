@@ -26,6 +26,22 @@ export function slideInFromRight(delay: number) {
   };
 }
 
+export function Lift() {
+  return {
+    initial: {
+      rotateY: 0,
+      transformOrigin: 'left', // Adjust as needed, e.g., 'center', 'left'
+      transition: { duration: 0.5 } // Adjust timing as needed
+    },
+    animate: {
+      rotateY: 90, // Rotate the image 90 degrees along the Y-axis
+      transformOrigin: 'left', // Should match the initial state
+      transition: { duration: 0.5 } // Adjust timing as needed
+    }
+  };
+
+}
+
 export const slideInFromTop = {
   hidden: { y: -100, opacity: 0 },
   visible: {
