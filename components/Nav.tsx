@@ -12,27 +12,30 @@ export default function Nav() {
   const navItems = ['Work', 'Blog', 'Giving Back'];
 
   return (
-    <motion.div className="w-full flex flex-col font-comfota">
-      <motion.div
-        variants={slideInFromLeft(0.1)}
-        className="border-b-[1px] py-[20px] flex gap-4"
-      >
-        <motion.p className="text-white pr-4 border-r-[1px] font-comfota">
+    <motion.div className="w-full flex flex-col font-comfota" initial="hidden" animate="visible">
+      <motion.div className="border-b-[1px] py-[20px] flex gap-4">
+        <motion.p
+          className="text-white pr-4 border-r-[1px] font-comfota"
+          variants={slideInFromLeft(0.1)}
+        >
           Need help ? Talk to an expert
         </motion.p>
-        <motion.p className="text-white">+254 799 710693</motion.p>
+        <motion.p className="text-white" variants={slideInFromLeft(0.2)}>
+          +254 799 710693
+        </motion.p>
       </motion.div>
       <motion.div className="w-full flex flex-row justify-between py-[30px]">
         <motion.div variants={slideInFromLeft(0.2)} className="">
           <motion.h2 className="text-white font-bold">MC (Logo)</motion.h2>
         </motion.div>
-        <motion.ul variants={slideInFromRight(0.2)} className="flex gap-5">
-          {navItems.map((item) => (
+        <motion.ul className="flex gap-5">
+          {navItems.map((item, index) => (
             <motion.li
               key={item}
               className="text-white cursor-pointer"
               onMouseEnter={() => setIsHovered(item)}
               onMouseLeave={() => setIsHovered(null)}
+              variants={slideInFromRight(0.2 * index)}
             >
               <motion.span
                 variants={slideBracketLeft}

@@ -1,7 +1,7 @@
 import Nav from '@/components/Nav';
 import SpringIcons from '@/components/SpringIcons';
 import Cards from '@/components/Cards';
-import About from '@/components/About';\
+import About from '@/components/About';
 import Giving from '@/components/Giving';
 import './globals.css';
 
