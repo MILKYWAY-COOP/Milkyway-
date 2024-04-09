@@ -74,7 +74,7 @@ export default function Cards() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className={`absolute z-30 min-w-[400px] bg-[url('../public/bg.png')] `}
+              className={`absolute z-30 min-w-[400px] bg-stars `}
               style={{
                 top: '20%',
                 left: '40%',
