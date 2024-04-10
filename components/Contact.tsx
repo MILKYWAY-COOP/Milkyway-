@@ -1,6 +1,6 @@
 import Earth from '@/assets/earth.png';
 import Image from 'next/image';
-import emailjs from 'emailjs-com';
+import emailjs from '@emailjs/browser';
 import toast, { Toaster } from 'react-hot-toast';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
@@ -9,7 +9,7 @@ import { useState } from 'react';
 export default function Contact() {
   const [isLoading, setIsLoading] = useState(false);
 
-  const onSubmit = (values, { resetForm }) => {
+  const onSubmit = (values: any, { resetForm }: { resetForm: () => void }) => {
     setIsLoading(true);
     emailjs
       .send('service_4uu6p5n', 'template_d0h39yh', values, 'MwuuGyU2QPzSfKX6d')
