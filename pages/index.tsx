@@ -4,6 +4,7 @@ import Cards from '@/components/Cards';
 import About from '@/components/About';
 import Giving from '@/components/Giving';
 import Projects from '@/components/Projects';
+import Contact from '@/components/Contact';
 import './globals.css';
 
 import { motion } from 'framer-motion';
@@ -37,6 +38,7 @@ export default function Page() {
       <Giving />
       <div className="flex flex-col gap-[160px] px-[204px]">
         <Projects />
+        <Contact />
       </div>
     </div>
   );

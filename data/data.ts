@@ -94,39 +94,46 @@ export const categories = [
 export const projects = [
   {
     title: 'Affyn',
-    tags: ['React JS', 'Node JS', 'MongoDB', 'GraphQL'],
+    tags: ['Next js', 'Tailwind CSS', 'Redux', 'Figma'],
     image: Affyn,
     description:
-      'Affyn is a platform that connects users with mental health professionals. It is built with React JS, Node JS, MongoDB, and GraphQL.',
+      'The project involved a unique combination of features and technologies to enable NFT minting and facilitate a marketplace with normal authentication. The goal was to create a seamless user experience that encompassed Web3 wallet integration, smart contract interactions, and connection with user accounts.',
     accent: '#071031',
   },
   {
     title: 'OCB Stream',
-    tags: ['React JS', 'Node JS', 'MongoDB', 'GraphQL'],
+    tags: ['React JS', 'Three JS', 'Redux', 'AWS', 'Jest', 'Strapi'],
     image: OCBStream,
     description:
-      'OCB Stream is a platform that connects users with mental health professionals. It is built with React JS, Node JS, MongoDB, and GraphQL.',
+      'OCB Stream is a web application that allows users to improve their drive thru experience. It is can be used by both restaurant owners and customers.',
     accent: '#314E10',
   },
   {
     title: 'Aksanti',
-    tags: ['React JS', 'Node JS', 'MongoDB', 'GraphQL'],
+    tags: ['React JS', 'Tailwind CSS'],
     image: Aksanti,
     description:
-      'Aksanti is a platform that connects users with mental health professionals. It is built with React JS, Node JS, MongoDB, and GraphQL.',
+      "AKSANTI GROUP CORPORATION is a Congolese holding corporation that centers its activities on the country's primary economy. We build their landing page.",
     accent: '#11294A',
   },
   {
     title: 'Jays',
-    tags: ['React JS', 'Node JS', 'MongoDB', 'GraphQL'],
+    tags: [
+      'Next js',
+      'Prisma',
+      'Postgres',
+      'Google Cloud',
+      'Docker',
+      'Typescript',
+      'API',
+    ],
     image: Jays,
-    description:
-      'Jays is a platform that connects users with mental health professionals. It is built with React JS, Node JS, MongoDB, and GraphQL.',
+    description: 'Jays is ',
     accent: '#0E062E',
   },
   {
     title: 'Humania',
-    tags: ['React JS', 'Node JS', 'MongoDB', 'GraphQL'],
+    tags: ['React JS', 'Web3.js', 'Tailwind CSS', 'Figma'],
     image: Humania,
     description:
       'Humania is a platform that connects users with mental health professionals. It is built with React JS, Node JS, MongoDB, and GraphQL.',
