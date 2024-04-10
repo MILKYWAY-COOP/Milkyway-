@@ -24,6 +24,12 @@ const config: Config = {
         contrast1: '#FFCC00',
         contrast2: '#15194B',
         skyBlue: '#17468D',
+
+        acc1: '#071031',
+        acc2: '#314E10',
+        acc3: '#11294A',
+        acc4: '#0E062E',
+        acc5: '#50084C',
       },
       fontFamily: {
         comfota: ['Poppins', 'sans-serif'],

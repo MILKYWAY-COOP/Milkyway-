@@ -15,6 +15,7 @@
     "@popmotion/popcorn": "^0.4.4",
     "@react-three/drei": "^9.105.1",
     "@react-three/fiber": "^8.16.1",
+    "@studio-freight/lenis": "^1.0.42",
     "@types/three": "^0.163.0",
     "firebase": "^10.10.0",
     "framer-motion": "^11.0.24",

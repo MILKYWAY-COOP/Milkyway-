@@ -3,6 +3,7 @@ import SpringIcons from '@/components/SpringIcons';
 import Cards from '@/components/Cards';
 import About from '@/components/About';
 import Giving from '@/components/Giving';
+import Projects from '@/components/Projects';
 import './globals.css';
 
 import { motion } from 'framer-motion';
@@ -13,7 +14,7 @@ export default function Page() {
 
   return (
     <div
-      className={`w-full flex flex-col items-start relative bg-stars gap-[160px] pb-[60px]`}
+      className={`w-full flex flex-col items-start justify-center relative bg-stars gap-[160px] pb-[60px]`}
     >
       <div className="w-full flex min-h-screen flex-col items-start relative bg-custom-bg lg:px-[80px] md:px-[60px] sm:px-[40px] px-[20px] bg-cover bg-center">
         <Nav />
@@ -34,6 +35,9 @@ export default function Page() {
         <About />
       </div>
       <Giving />
+      <div className="flex flex-col gap-[160px] px-[204px]">
+        <Projects />
+      </div>
     </div>
   );
 }

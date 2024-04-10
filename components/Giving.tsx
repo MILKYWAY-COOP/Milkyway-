@@ -7,11 +7,8 @@ import FadeInWhenVisible from '@/utils/fadeInWhenVisible';
 import LeftDiagonalWhenVisible from '@/utils/leftDiagonalWhenVisible';
 import RightDiagonalWhenVisible from '@/utils/rightDiagonalWhenVisible';
 import SunAnimation from '@/utils/sunAnimation';
-import { Lift } from '@/utils/motion';
 
 export default function Giving() {
-  //   const variants = ;
-
   return (
     <motion.div
       className="bg-skyBlue w-full flex pt-[322px] pb-[92px] px-[204px] gap-[35px] relative"
