@@ -4,6 +4,9 @@ import Cloud from '@/assets/clouds.png';
 import Sun from '@/assets/sun.png';
 
 import FadeInWhenVisible from '@/utils/fadeInWhenVisible';
+import LeftDiagonalWhenVisible from '@/utils/leftDiagonalWhenVisible';
+import RightDiagonalWhenVisible from '@/utils/rightDiagonalWhenVisible';
+import SunAnimation from '@/utils/sunAnimation';
 import { Lift } from '@/utils/motion';
 
 export default function Giving() {
@@ -11,7 +14,7 @@ export default function Giving() {
 
   return (
     <motion.div
-      className="bg-skyBlue py-[72px] w-full flex pt-{322px} pb-[92px] px-[204px] gap-[35px] w-[50%]"
+      className="bg-skyBlue w-full flex pt-[322px] pb-[92px] px-[204px] gap-[35px] relative"
       initial="hidden"
       animate="visible"
     >
@@ -33,11 +36,17 @@ export default function Giving() {
         </motion.p>
       </motion.div>
       <motion.div className="w-[50%] h-[750px] relative">
-        <motion.div
-          className="h-[100%] w-[100%] bg-koimbi bg-center bg-cover absolute top-0 left-0 right-0 bottom-0 z-999"
-          //   variants={Lift()}
-        />
+        <motion.div className="h-[100%] w-[100%] bg-koimbi bg-center bg-cover absolute top-0 left-0 right-0 bottom-0 z-[999]" />
       </motion.div>
+      <LeftDiagonalWhenVisible className="absolute top-[90px] left-[30%]">
+        <Image src={Cloud} alt="cloud" />
+      </LeftDiagonalWhenVisible>
+      <RightDiagonalWhenVisible className="absolute top-[50px] right-[10%]">
+        <Image src={Cloud} alt="cloud" />
+      </RightDiagonalWhenVisible>
+      <SunAnimation className="absolute top-[-50px] left-[50%] z-[500]">
+        <Image src={Sun} alt="sun" />
+      </SunAnimation>
     </motion.div>
   );
 }

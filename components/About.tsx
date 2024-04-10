@@ -39,7 +39,7 @@ export default function About() {
           variants={slideInFromLeft(0.3)}
         >
           We are software development company solely focused on creating
-          cutting-edge software solutions, we are is driven by a profound
+          cutting-edge software solutions, driven by a profound
           passion and motivation for technological innovation. We are committed
           to prioritizing efficient project delivery, ensuring that each project
           is completed within the agreed-upon budget constraints. Our goal is to
