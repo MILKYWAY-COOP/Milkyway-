@@ -98,7 +98,7 @@ export const projects = [
     image: Affyn,
     description:
       'Affyn is a platform that connects users with mental health professionals. It is built with React JS, Node JS, MongoDB, and GraphQL.',
-    accent: 'acc1',
+    accent: '#071031',
   },
   {
     title: 'OCB Stream',
@@ -106,7 +106,7 @@ export const projects = [
     image: OCBStream,
     description:
       'OCB Stream is a platform that connects users with mental health professionals. It is built with React JS, Node JS, MongoDB, and GraphQL.',
-    accent: 'acc2',
+    accent: '#314E10',
   },
   {
     title: 'Aksanti',
@@ -114,7 +114,7 @@ export const projects = [
     image: Aksanti,
     description:
       'Aksanti is a platform that connects users with mental health professionals. It is built with React JS, Node JS, MongoDB, and GraphQL.',
-    accent: 'acc3',
+    accent: '#11294A',
   },
   {
     title: 'Jays',
@@ -122,7 +122,7 @@ export const projects = [
     image: Jays,
     description:
       'Jays is a platform that connects users with mental health professionals. It is built with React JS, Node JS, MongoDB, and GraphQL.',
-    accent: 'acc4',
+    accent: '#0E062E',
   },
   {
     title: 'Humania',
@@ -130,6 +130,6 @@ export const projects = [
     image: Humania,
     description:
       'Humania is a platform that connects users with mental health professionals. It is built with React JS, Node JS, MongoDB, and GraphQL.',
-    accent: 'acc5',
+    accent: '#50084C',
   },
 ];

@@ -28,13 +28,13 @@ export default function ProjectCard({
       }}
     >
       <motion.div
-        className={`w-full h-[575px] bg-${
-          project.accent
-        } rounded-[24px] flex gap-[66px] p-[70px] flex-[${
-          index % 2 === 0 ? 'row-reverse' : ''
+        className={`w-full h-[575px] rounded-[24px] gap-[66px] p-[70px] 
         }]`}
         style={{
           scale: cardScale,
+          backgroundColor: project.accent,
+          display: 'flex',
+          flexDirection: index % 2 === 0 ? 'row-reverse' : 'row',
         }}
       >
         <div className="w-[50%] flex flex-col">
