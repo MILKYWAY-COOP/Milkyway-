@@ -32,7 +32,7 @@ export default function Hero() {
       <div className="w-full h-[calc(100vh-149.219px)] flex flex-col items-center mt-[50px] overflow-hidden gap-[60px]">
         <motion.div variants={slideInFromLeft(delayValue)}>
           <p className="text-white font-comfota md:text-[60px] sm:text-[40px] text-[30px] text-center">
-            MilkyWay Cooperation
+            Milky<span className="text-[#FFCC00]">Way</span> Cooperation
           </p>
           <p className="text-white font-comfota md:text-[40px] sm:text-[30px] text-[16px] text-center">
             Tech is our business and business is good

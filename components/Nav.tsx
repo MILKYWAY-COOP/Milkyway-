@@ -6,13 +6,18 @@ import {
   slideBracketRight,
   slideBracketLeft,
 } from '@/utils/motion';
+import Logo from '@/assets/logo';
 
 export default function Nav() {
   const [isHovered, setIsHovered] = useState<string | null>(null);
   const navItems = ['Work', 'Blog', 'Giving Back'];
 
   return (
-    <motion.div className="w-full flex flex-col font-comfota" initial="hidden" animate="visible">
+    <motion.div
+      className="w-full flex flex-col font-comfota"
+      initial="hidden"
+      animate="visible"
+    >
       <motion.div className="border-b-[1px] py-[20px] flex gap-4">
         <motion.p
           className="text-white pr-4 border-r-[1px] font-comfota"
@@ -26,7 +31,7 @@ export default function Nav() {
       </motion.div>
       <motion.div className="w-full flex flex-row justify-between py-[30px]">
         <motion.div variants={slideInFromLeft(0.2)} className="">
-          <motion.h2 className="text-white font-bold">MC (Logo)</motion.h2>
+          <Logo width={95} height={60} />
         </motion.div>
         <motion.ul className="flex gap-5">
           {navItems.map((item, index) => (
