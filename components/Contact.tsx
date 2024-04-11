@@ -11,16 +11,12 @@ export default function Contact() {
 
   const formik = useFormik({
     initialValues: {
-      //   firstName: '',
-      //   secondName: '',
       from_name: '',
       email: '',
       service: '',
       message: '',
     },
     validationSchema: Yup.object({
-      //   firstName: Yup.string().required('*First Name is required'),
-      //   secondName: Yup.string().required('*Second Name is required'),
       from_name: Yup.string().required('*Name is required'),
       email: Yup.string()
         .email('*Invalid email address')
@@ -59,12 +55,12 @@ export default function Contact() {
       </h2>
       <div className="flex gap-[50px] w-full">
         <div className="flex justify-center align-center w-[50%]">
-          <Image src={Earth} alt="earth" />
+          <Image src={Earth} alt="earth" className="hover:rotate-180" />
         </div>
         <div>
           <form
             onSubmit={formik.handleSubmit}
-            className="flex flex-col w-[510px] gap-[20px]"
+            className="flex flex-col w-[510px] gap-[20px] h-full justify-center align-center"
           >
             <div className="w-full flex gap-[18px]">
               <input
@@ -75,14 +71,6 @@ export default function Contact() {
                 onChange={formik.handleChange}
                 value={formik.values.from_name}
               />
-              {/* <input
-                type="text"
-                name="secondName"
-                placeholder="Second Name"
-                className="w-[50%] p-[14px] rounded-[20px] bg-greyB text-black font-comfota"
-                onChange={formik.handleChange}
-                value={formik.values.secondName} */}
-              {/* /> */}
             </div>
             <input
               type="email"

@@ -11,6 +11,10 @@ const config: Config = {
       backgroundImage: {
         'custom-bg':
           "linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url('https://github.com/MILKYWAY-COOP/MilkyWay/blob/main/images/img1.jpg?raw=true')",
+        'custom-bg1':
+          "linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url('/milkysky.webp')",
+        'custom-bg2':
+          "linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url('/milkysky2.webp')",
           "stars": "url('/bg.png')",
           "koimbi": "url('/Koimbi.png')",
       },
