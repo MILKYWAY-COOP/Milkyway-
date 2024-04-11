@@ -9,35 +9,47 @@ import { useState } from 'react';
 export default function Contact() {
   const [isLoading, setIsLoading] = useState(false);
 
-  const onSubmit = (values: any, { resetForm }: { resetForm: () => void }) => {
-    setIsLoading(true);
-    emailjs
-      .send('service_4uu6p5n', 'template_d0h39yh', values, 'MwuuGyU2QPzSfKX6d')
-      .then((res: any) => {
-        setIsLoading(false);
-        toast.success('Email sent successfully!');
-        resetForm();
-      })
-      .catch((err: any) => {
-        setIsLoading(false);
-        toast.error('Error sending email!');
-      });
-  };
-
   const formik = useFormik({
     initialValues: {
-      fullName: '',
+      //   firstName: '',
+      //   secondName: '',
+      from_name: '',
       email: '',
+      service: '',
       message: '',
     },
     validationSchema: Yup.object({
-      fullName: Yup.string().required('*Full Name is required'),
+      //   firstName: Yup.string().required('*First Name is required'),
+      //   secondName: Yup.string().required('*Second Name is required'),
+      from_name: Yup.string().required('*Name is required'),
       email: Yup.string()
         .email('*Invalid email address')
         .required('*Email is required'),
+      service: Yup.string().required('*Service selection is required'),
       message: Yup.string().required('*Message is required'),
     }),
-    onSubmit: onSubmit,
+
+    onSubmit: (values, { resetForm }) => {
+      console.log(values);
+
+      setIsLoading(true);
+      emailjs
+        .send(
+          'service_4uu6p5n',
+          'template_eqfpl7p',
+          values,
+          'MwuuGyU2QPzSfKX6d'
+        )
+        .then((res) => {
+          setIsLoading(false);
+          toast.success('Email sent successfully!');
+          resetForm();
+        })
+        .catch((err) => {
+          setIsLoading(false);
+          toast.error('Error sending email!');
+        });
+    },
   });
 
   return (
@@ -47,53 +59,70 @@ export default function Contact() {
       </h2>
       <div className="flex gap-[50px] w-full">
         <div className="flex justify-center align-center w-[50%]">
-          <Image src={Earth} alt="earth" className="" />
+          <Image src={Earth} alt="earth" />
         </div>
-        <div className="flex flex-col w-[510px] gap-[20px]">
-          <div className="w-full flex gap-[18px]">
-            <input
-              type="text"
-              placeholder="First Name"
-              className="w-[50%] p-[14px] rounded-[20px] bg-greyB text-black font-comfota"
-            />
-            <input
-              type="text"
-              placeholder="Second Name"
-              className="w-[50%] p-[14px] rounded-[20px] bg-greyB text-black font-comfota"
-            />
-          </div>
-          <input
-            type="email"
-            placeholder="Email"
-            className="p-[14px] rounded-[20px] bg-greyB text-black font-comfota"
-          />
-
-          <select
-            name="services"
-            id="services"
-            className="w-[100%] p-[14px] rounded-[20px] bg-greyB text-black font-comfota slect"
+        <div>
+          <form
+            onSubmit={formik.handleSubmit}
+            className="flex flex-col w-[510px] gap-[20px]"
           >
-            <option value="">Choose Service</option>
-            <option value="Front End">Front End</option>
-            <option value="Back End">Back End</option>
-            <option value="Servers & DevOps">Servers & DevOps</option>
-            <option value="Databases">Databases</option>
-            <option value="Other">Other</option>
-          </select>
-          <textarea
-            name="message"
-            id="message"
-            placeholder="Message"
-            className="p-[14px] rounded-[20px] bg-greyB text-black font-comfota"
-          />
-          <button
-            className="border-[1px] border-contrast1 px-[32px] py-[12px] rounded-[22px] font-comfota text-white"
-            onClick={() => onSubmit}
-          >
-            Send
-          </button>
+            <div className="w-full flex gap-[18px]">
+              <input
+                type="text"
+                name="from_name"
+                placeholder="Full Name"
+                className="w-[100%] p-[14px] rounded-[20px] bg-greyB text-black font-comfota"
+                onChange={formik.handleChange}
+                value={formik.values.from_name}
+              />
+              {/* <input
+                type="text"
+                name="secondName"
+                placeholder="Second Name"
+                className="w-[50%] p-[14px] rounded-[20px] bg-greyB text-black font-comfota"
+                onChange={formik.handleChange}
+                value={formik.values.secondName} */}
+              {/* /> */}
+            </div>
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              className="p-[14px] rounded-[20px] bg-greyB text-black font-comfota"
+              onChange={formik.handleChange}
+              value={formik.values.email}
+            />
+            <select
+              name="service"
+              className="w-[100%] p-[14px] rounded-[20px] bg-greyB text-black font-comfota"
+              onChange={formik.handleChange}
+              value={formik.values.service}
+            >
+              <option value="">Choose Service</option>
+              <option value="Front End">Front End</option>
+              <option value="Back End">Back End</option>
+              <option value="Servers & DevOps">Servers & DevOps</option>
+              <option value="Databases">Databases</option>
+              <option value="Other">Other</option>
+            </select>
+            <textarea
+              name="message"
+              placeholder="Message"
+              className="p-[14px] rounded-[20px] bg-greyB text-black font-comfota"
+              onChange={formik.handleChange}
+              value={formik.values.message}
+            />
+            <button
+              type="submit"
+              className="border-[1px] border-contrast1 px-[32px] py-[12px] rounded-[22px] font-comfota text-white "
+              disabled={isLoading}
+            >
+              {isLoading ? 'Sending...' : 'Send'}
+            </button>
+          </form>
         </div>
       </div>
+      <Toaster />
     </div>
   );
 }
