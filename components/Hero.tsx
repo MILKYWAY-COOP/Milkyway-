@@ -23,9 +23,17 @@ export default function Hero() {
   return (
     <div
       className={`w-full h-[100vh] flex min-h-screen flex-col items-start relative ${
-        bg === 'custom-bg' ? 'bg-custom-bg' : 'bg-custom-bg1'
-      } ${
-        bg === 'custom-bg2' ? 'bg-custom-bg2' : 'bg-custom-bg1'
+        bg === 'custom-bg1'
+        ? 'bg-custom-bg1'
+        : bg === 'custom-bg2'
+        ? 'bg-custom-bg2'
+        : bg === 'custom-bg3'
+        ? 'bg-custom-bg3'
+        : bg === 'custom-bg4'
+        ? 'bg-custom-bg4'
+        : bg === 'custom-bg5'
+        ? 'bg-custom-bg5'
+        : ''
       } lg:px-[80px] md:px-[60px] sm:px-[40px] px-[20px] bg-cover bg-center overflow-hidden`}
     >
       <Nav />

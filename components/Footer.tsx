@@ -33,8 +33,18 @@ export default function Footer() {
       animate="visible"
     >
       <div
-        className={`${bg === 'custom-bg' ? 'bg-custom-bg' : ''} ${
-          bg === 'custom-bg2' ? 'bg-custom-bg2' : ''
+        className={`${
+          bg === 'custom-bg1'
+            ? 'bg-custom-bg1'
+            : bg === 'custom-bg2'
+            ? 'bg-custom-bg2'
+            : bg === 'custom-bg3'
+            ? 'bg-custom-bg3'
+            : bg === 'custom-bg4'
+            ? 'bg-custom-bg4'
+            : bg === 'custom-bg5'
+            ? 'bg-custom-bg5'
+            : ''
         } w-full h-full bg-cover bg-center absolute inset-0 flex align-start md:flex-row flex-col`}
       >
         <div className="flex-1 w-full h-full flex flex-col md:gap-[24px] align-center p-[10px] md:p-[40px]">
