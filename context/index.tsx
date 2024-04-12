@@ -19,13 +19,7 @@ export function Application({ children }: ApplicationProps) {
   const [screen, setScreen] = useState('sm');
   const [isNavOpen, setIsNavOpen] = useState(false);
 
-  const bgs = [
-    'custom-bg1',
-    'custom-bg2',
-    'custom-bg3',
-    'custom-bg4',
-    'custom-bg5',
-  ];
+  const bgs = ['custom-bg1', 'custom-bg2', 'custom-bg3', 'custom-bg4'];
 
   function changeBg() {
     const random = Math.floor(Math.random() * bgs.length);

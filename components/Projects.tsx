@@ -26,11 +26,11 @@ export default function Projects() {
 
   return (
     <motion.div
-      className="w-full flex flex-col align-center justify-center relative pt-[40px]"
+      className="w-full flex flex-col align-center justify-center relative "
       ref={ref}
     >
-      <FadeInWhenVisible className="text-white md:text-[44px] text-[26px] mb-[24px] font-comfota text-center sticky top-[50px] ">
-        <h1 className="sticky">Work</h1>
+      <FadeInWhenVisible className="text-white md:text-[44px] text-[26px] mb-[24px] font-comfota text-center sticky top-[90px] pt-[40px]">
+        <h1 className="sticky top-[0px]">Work</h1>
       </FadeInWhenVisible>
       {projects.map((project, index) => {
         const target = 1 - (projects.length - index) * 0.05;

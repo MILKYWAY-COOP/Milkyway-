@@ -31,7 +31,7 @@ export default function ProjectCard({
 
   return (
     <motion.div
-      className={`w-full flex align-center justify-center sticky mb-[24px]`}
+      className={`w-full flex align-center justify-center sticky mb-[20px]`}
       ref={ref}
       style={{
         top: `calc(15% + ${index * 25}px)`,

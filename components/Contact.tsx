@@ -114,6 +114,7 @@ export default function Contact() {
               className="p-[14px] rounded-[20px] bg-greyB text-black font-comfota"
               onChange={formik.handleChange}
               value={formik.values.message}
+              rows={5}
             />
             <button
               type="submit"

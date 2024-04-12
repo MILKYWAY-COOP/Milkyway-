@@ -48,17 +48,26 @@ export default function Nav() {
           className={`border-b-[1px] flex gap-4 ${
             screen === 'md'
               ? 'text-[13px]  py-[16px]'
-              : 'text-[20px]  py-[18px]'
+              : 'text-[14px]  py-[18px]'
           }`}
         >
           <motion.p
-            className={`text-white pr-4 bo'rder-r-[1px] font-comfota `}
+            className={`text-white  pr-4 bo'rder-r-[1px] font-comfota`}
             variants={slideInFromLeft(0.1)}
           >
             Need help ? Talk to an expert
           </motion.p>
-          <motion.p className="text-white" variants={slideInFromLeft(0.2)}>
-            +254 799 710693
+          <motion.p
+            className="text-white hover:text-contrast1"
+            variants={slideInFromLeft(0.2)}
+          >
+            <a
+              href="https://wa.me/254799710693"
+              target="_blank"
+              style={{ color: 'inherit', textDecoration: 'none' }}
+            >
+              +254 799 710693
+            </a>
           </motion.p>
         </motion.div>
         <motion.div
@@ -78,7 +87,7 @@ export default function Nav() {
             {navItems.map((item, index) => (
               <motion.li
                 key={item}
-                className="text-white cursor-pointer"
+                className="text-white  cursor-pointer"
                 onMouseEnter={() => setIsHovered(item)}
                 onMouseLeave={() => setIsHovered(null)}
                 variants={slideInFromRight(0.2 * index)}
@@ -95,11 +104,12 @@ export default function Nav() {
                   id={item === 'Blog' ? 'Blog' : ''}
                   href={
                     item === 'Blog'
-                    ? 'https://steveatmilkyway.blogspot.com/'
-                    : undefined
+                      ? 'https://steveatmilkyway.blogspot.com/'
+                      : undefined
                   }
                   onClick={() => scrollToSection(`${item}`)}
-                  target='_blank'
+                  target="_blank"
+                  className="hover:text-contrast1"
                 >
                   {item}
                 </a>
