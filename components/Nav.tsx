@@ -156,11 +156,9 @@ export default function Nav() {
       </motion.div>
 
       <motion.div
-        className={`w-full flex flex-col gap-4 absolute inset-0 bg-stars z-9999 p-[28px] ${
-          isNavOpen ? 'flex' : 'hidden'
+        className={`w-full flex-col gap-4 absolute transition-all duration-500 bg-stars z-9999 p-[28px] right-[-100%] ${
+          isNavOpen ? 'mobileNav active' : 'mobileNav-hidden inactive'
         }`}
-        initial="hidden"
-        animate="visible"
       >
         <motion.div className="w-full flex align-center justify-end">
           <motion.button
@@ -205,7 +203,8 @@ export default function Nav() {
             </FadeInLeftWhenVisible>
           ))}
         </motion.ul>
-        <motion.div className="w-full">
+
+        <motion.div className="w-full border-t-[1px] border-white p-[20px]">
           <motion.div className="flex justify-center gap-4">
             <Link href="/">
               <Upwork width={30} height={30} />
@@ -220,6 +219,21 @@ export default function Nav() {
               <Stackoverflow width={30} height={30} />
             </Link>
           </motion.div>
+        </motion.div>
+
+        <motion.div className="w-full flex justify-center align-center gap-4 flex-col">
+          <p className="text-white text-[14px] text-center">
+            Need help ? Talk to an expert
+          </p>
+          <p className="text-white text-[14px] text-center">
+            <a
+              href="https://wa.me/254799710693"
+              target="_blank"
+              style={{ color: 'inherit', textDecoration: 'none' }}
+            >
+              +254 799 710693
+            </a>
+          </p>
         </motion.div>
       </motion.div>
     </motion.div>

@@ -26,7 +26,6 @@ export function Application({ children }: ApplicationProps) {
     setBg(bgs[random]);
   }
 
-  // Function to update the screen size
   const updateScreenSize = () => {
     const width = window.innerWidth;
     if (width < 640) {
