@@ -49,7 +49,7 @@ export default function Contact() {
   });
 
   return (
-    <div className="w-full flex flex-col justify-center align-center">
+    <div className="w-full flex flex-col justify-center align-center" id="Contact Us">
       <h2 className="text-white text-[20px] lg:text-[44px] mb-[24px] font-comfota text-center">
         Connect with us
       </h2>

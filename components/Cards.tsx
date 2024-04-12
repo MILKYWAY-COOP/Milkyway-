@@ -20,8 +20,6 @@ export default function Cards() {
     }
   };
 
-  console.log('scrollY', scrollY());
-
   return (
     <div
       className="flex flex-col w-[100%] align-center justify-center rounded-[20px] relative overflow-hidden"
@@ -30,6 +28,7 @@ export default function Cards() {
         setIsHovered(false);
         setSelectedId(null);
       }}
+      id="Services"
     >
       <div className="w-[100%] flex flex-col justify-center align-center gap-[16px] md:gap-[24px] overflow-hidden">
         <h1 className="text-white md:text-[44px] text-[30px] text-center">
@@ -73,14 +72,14 @@ export default function Cards() {
                           ? setSelectedId(index.toString())
                           : setSelectedId(null);
                       }}
-                    >
+                    > 
                       Expand
                     </motion.button>
                   </motion.li>
                 )}
               </motion.ul>
             </motion.div>
-          </FadeInWhenVisible>
+          </FadeInWhenVisible>   
         ))}
 
         <AnimatePresence>

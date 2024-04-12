@@ -17,7 +17,7 @@ import Logo from '@/assets/logo';
 
 export default function Nav() {
   const [isHovered, setIsHovered] = useState<string | null>(null);
-  const navItems = ['Work', 'Blog', 'Giving Back', 'Contact Us'];
+  const navItems = ['Services', 'Giving Back', 'Work', 'Blog', 'Contact Us'];
 
   const context = useContext(AppContext);
 
@@ -85,7 +85,7 @@ export default function Nav() {
                 >
                   [
                 </motion.span>
-                {item}
+                <a href={`#${item}`}>{item}</a>
                 <motion.span
                   variants={slideBracketRight}
                   initial="hidden"

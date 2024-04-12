@@ -27,6 +27,7 @@ export default function Projects() {
     <motion.div
       className="w-full flex flex-col align-center justify-center relative pt-[40px]"
       ref={ref}
+      id="Work"
     >
       <h1 className="text-white md:text-[44px] text-[26px] mb-[24px] font-comfota text-center sticky top-[100px] ">
         Work

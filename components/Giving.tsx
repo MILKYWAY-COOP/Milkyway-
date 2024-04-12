@@ -14,6 +14,7 @@ export default function Giving() {
       className="bg-skyBlue w-full flex pt-[97px] md:pt-[122px] lg:pt-[250px] pb-[92px] px-[40px] xl:px-[204px] gap-[16px] md:gap-[35px] relative lg:flex-row flex-col-reverse md:px-[104px]"
       initial="hidden"
       animate="visible"
+      id='Giving Back'
     >
       <motion.div className="flex flex-col gap-[16px] md:gap-[28px] flex-1 ">
         <FadeInWhenVisible>
