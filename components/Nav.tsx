@@ -156,7 +156,7 @@ export default function Nav() {
       </motion.div>
 
       <motion.div
-        className={`w-full flex-col gap-4 absolute transition-all duration-500 bg-stars z-9999 p-[28px] right-[-100%] ${
+        className={`w-full flex-col gap-4 absolute transition-all duration-500 bg-stars z-9999 p-[28px] ${
           isNavOpen ? 'mobileNav active' : 'mobileNav-hidden inactive'
         }`}
       >

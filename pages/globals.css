@@ -93,5 +93,5 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .mobileNav-hidden.inactive {
-  animation: slideOut 0.5s forwards;
+  /* animation: slideOut 0.5s forwards; */
 }
