@@ -24,18 +24,18 @@ const data = [
 export default function About() {
   return (
     <motion.div
-      className="w-full h-full flex gap-[60px] align-center justify-center md:flex-row flex-col"
+      className="w-full h-full flex gap-[60px] align-center justify-center lg:flex-row flex-col-reverse"
       initial="hidden"
       animate="visible"
     >
-      <motion.div className="md:max-w-[50%] pt-[40px]">
+      <motion.div className="lg:max-w-[50%] pt-[40px]">
         <FadeInWhenVisible>
-          <motion.h1 className="text-white text-[44px] mb-[24px] font-comfota">
+          <motion.h1 className="text-white lg:text-[44px] mb-[24px] font-comfota text-[20px]">
             About Us
           </motion.h1>
         </FadeInWhenVisible>
         <motion.span
-          className="text-greyB font-comfota"
+          className="text-greyB font-comfota text-[14px] lg:text-[18px]"
           variants={slideInFromLeft(0.3)}
         >
           We are software development company solely focused on creating
@@ -49,7 +49,7 @@ export default function About() {
           expertise, innovation, and a deep understanding of the latest
           technological trends to deliver unparalleled value.{' '}
         </motion.span>
-        <motion.div className="flex gap-[32px] mt-[32px] overflow-scroll">
+        <motion.div className="flex gap-[32px] mt-[32px]">
           {data.map((item, index) => (
             <FadeInWhenVisible key={index}>
               <motion.div className="flex flex-col gap-[12px] items-center">
@@ -88,7 +88,7 @@ export default function About() {
           autoPlay
           loop
           muted
-          className="w-[555px] aspect-square rounded-[24px]"
+          className="w-[100%] aspect-video lg:w-[555px] lg:aspect-square rounded-[24px]"
           src="/blackhol.mp4"
           style={{ objectFit: 'cover', objectPosition: 'center' }}
         />

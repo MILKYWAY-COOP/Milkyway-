@@ -47,19 +47,19 @@ export default function Cards() {
           <FadeInWhenVisible key={index}>
             <motion.div
               layoutId={index.toString()}
-              className="w-[300px] h-[full] md:w-[33vw] lg:w-[476px] md:h-[492px] rounded-[28px] border-[2px] border-contrast2 p-[20px] md:px-[40px] md:py-[32px] overflow-hidden relative flex flex-col gap-[28px]"
+              className="w-[300px] h-[400px] md:w-[33vw] xl:h-[492px] rounded-[28px] border-[2px] border-contrast2 p-[20px] md:px-[40px] md:py-[32px] overflow-hidden relative flex flex-col gap-[28px]"
             >
               <motion.div className="flex align-center gap-[16px]">
                 <category.icon width={48} height={48} />
-                <motion.h2 className="text-white text-[20px] md:text-[24px] font-comfota">
+                <motion.h2 className="text-white text-[18px] xl:text-[24px] font-comfota">
                   {category.name}
                 </motion.h2>
               </motion.div>
-              <motion.ul className="flex flex-col gap-[16px]">
+              <motion.ul className="flex flex-col gap-[12px] xl:gap-[16px]">
                 {category.technologies.slice(0, 8).map((tech, techIndex) => (
                   <motion.li key={techIndex}>
                     <TiTick className="inline-block mr-2" fill="#FFCC00" />
-                    <motion.span className="text-greyB md:text-[20px] font-comfota">
+                    <motion.span className="text-greyB text-[14px] xl:text-[20px] font-comfota">
                       {tech}
                     </motion.span>
                   </motion.li>
@@ -67,7 +67,7 @@ export default function Cards() {
                 {category.technologies.length > 9 && (
                   <motion.li>
                     <motion.button
-                      className="bg-contrast1 w-auto p-1 rounded absolute bottom-0 right-0 text-comfota cursor-pointer"
+                      className="bg-contrast1 w-auto p-1 rounded absolute bottom-0 right-0 text-comfota cursor-pointer text-[14px] xl:text-[20px]"
                       onClick={() => {
                         selectedId === null
                           ? setSelectedId(index.toString())
@@ -116,7 +116,7 @@ export default function Cards() {
                 >
                   <motion.div className="flex align-center gap-[16px]">
                     <IconComponent width={48} height={48} fill="#fff" />
-                    <motion.h2 className="text-white text-[24px]">
+                    <motion.h2 className="text-white text-[18px] lg:text-[24px]">
                       {categories[parseInt(selectedId)].name}
                     </motion.h2>
                   </motion.div>
@@ -127,7 +127,7 @@ export default function Cards() {
                         variants={slideInFromLeft(0.15 * techIndex)}
                       >
                         <TiTick className="inline-block mr-2" fill="#FFCC00" />
-                        <motion.span className="text-white text-[20px]">
+                        <motion.span className="text-white text-[16px] lg:text-[20px] ">
                           {tech}
                         </motion.span>
                       </motion.li>

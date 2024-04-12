@@ -4,8 +4,8 @@ interface AppContextType {
   changeBg: () => void;
   bg: string;
   screen: string;
-  isNavOpen?: boolean;
-  setIsNavOpen?: (value: boolean) => void;
+  isNavOpen: boolean;
+  setIsNavOpen: (value: boolean) => void;
 }
 
 export const AppContext = createContext<AppContextType | null>(null);

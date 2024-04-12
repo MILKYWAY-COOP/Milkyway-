@@ -28,7 +28,7 @@ export default function Projects() {
       className="w-full flex flex-col align-center justify-center relative pt-[40px]"
       ref={ref}
     >
-      <h1 className="text-white text-[44px] mb-[24px] font-comfota text-center sticky top-[100px] ">
+      <h1 className="text-white md:text-[44px] text-[26px] mb-[24px] font-comfota text-center sticky top-[100px] ">
         Work
       </h1>
       {projects.map((project, index) => {
