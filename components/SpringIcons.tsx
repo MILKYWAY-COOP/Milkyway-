@@ -156,7 +156,7 @@ export default function SpringIcons() {
           width: (size + gap) * 4 - gap,
           height: (size + gap) * 4 - gap,
           top: '30%',
-          left: '30%',
+          left: '20%',
           transform: 'translate(-30%, -30%)',
           perspective: 500,
         }}
