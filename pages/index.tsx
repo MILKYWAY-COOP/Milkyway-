@@ -1,4 +1,3 @@
-
 import { Application } from '@/context';
 
 import Hero from '@/components/Hero';
@@ -14,19 +13,19 @@ export default function Page() {
   return (
     <Application>
       <div
-        className={`w-full flex flex-col items-start justify-center relative bg-stars gap-[160px] pb-[80px]`}
+        className={`w-full flex flex-col items-start justify-center relative bg-stars  sm:gap-[60px] lg:gap-[160px] pb-[80px] `}
       >
         <Hero />
-        <div className="flex flex-col gap-[160px] px-[204px]">
+        <div className="flex flex-col md:gap-[120px] sm:gap-[60px] lg:gap-[160px] px-[40px] md:px-[104px] lg:px-[204px]">
           <Cards />
           <About />
         </div>
         <Giving />
-        <div className="flex flex-col gap-[160px] px-[204px]">
+        {/* <div className="flex flex-col gap-[160px] px-[204px]">
           <Projects />
           <Contact />
           <Footer />
-        </div>
+        </div> */}
       </div>
     </Application>
   );

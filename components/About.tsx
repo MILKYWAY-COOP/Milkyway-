@@ -24,11 +24,11 @@ const data = [
 export default function About() {
   return (
     <motion.div
-      className="w-full h-full flex gap-[60px] align-center justify-center"
+      className="w-full h-full flex gap-[60px] align-center justify-center md:flex-row flex-col"
       initial="hidden"
       animate="visible"
     >
-      <motion.div className="max-w-[50%] pt-[40px]">
+      <motion.div className="md:max-w-[50%] pt-[40px]">
         <FadeInWhenVisible>
           <motion.h1 className="text-white text-[44px] mb-[24px] font-comfota">
             About Us
@@ -39,22 +39,22 @@ export default function About() {
           variants={slideInFromLeft(0.3)}
         >
           We are software development company solely focused on creating
-          cutting-edge software solutions, driven by a profound
-          passion and motivation for technological innovation. We are committed
-          to prioritizing efficient project delivery, ensuring that each project
-          is completed within the agreed-upon budget constraints. Our goal is to
+          cutting-edge software solutions, driven by a profound passion and
+          motivation for technological innovation. We are committed to
+          prioritizing efficient project delivery, ensuring that each project is
+          completed within the agreed-upon budget constraints. Our goal is to
           set new standards in software development, by consistently delivering
           exceptional and timely solutions that meet and exceed our
           clients&apos; expectations. Our approach combines a blend of
           expertise, innovation, and a deep understanding of the latest
           technological trends to deliver unparalleled value.{' '}
         </motion.span>
-        <motion.div className="flex gap-[32px] mt-[32px]">
+        <motion.div className="flex gap-[32px] mt-[32px] overflow-scroll">
           {data.map((item, index) => (
             <FadeInWhenVisible key={index}>
               <motion.div className="flex flex-col gap-[12px] items-center">
                 <item.icon width={24} height={24} />
-                <motion.span className="text-white text-[20px] font-comfota">
+                <motion.span className="text-white md:text-[20px] font-comfota">
                   {item.text}
                 </motion.span>
               </motion.div>
@@ -67,15 +67,15 @@ export default function About() {
         >
           Stephen Muchendu - Founder
         </motion.h1>
-        <motion.div className="mt-[40px] flex gap-[20px]">
+        <motion.div className="mt-[40px] flex gap-[20px] md:flex-row flex-col">
           <motion.button
-            className="border-[1px] rounded-[24px] border-contrast1 px-[24px] py-[12px] text-white text-[18px]"
+            className="border-[1px] rounded-[24px] border-contrast1 px-[24px] py-[12px] text-white text-[18px] w-fit"
             variants={slideInFromLeft(0.3)}
           >
             Contact Us
           </motion.button>
           <motion.button
-            className="border-[1px] rounded-[24px] border-contrast1 px-[24px] py-[12px] text-white text-[18px] flex gap-[10px]"
+            className="border-[1px] rounded-[24px] border-contrast1 px-[24px] py-[12px] text-white text-[18px] flex gap-[10px] w-fit"
             variants={slideInFromLeft(0.3)}
           >
             <DownloadIcon width={24} height={24} />

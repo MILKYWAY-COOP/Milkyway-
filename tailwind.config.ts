@@ -15,8 +15,8 @@ const config: Config = {
           "linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url('/milkysky.webp')",
         'custom-bg2':
           "linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url('/milkysky2.webp')",
-          "stars": "url('/bg.png')",
-          "koimbi": "url('/Koimbi.png')",
+        stars: "url('/bg.png')",
+        koimbi: "url('/Koimbi.png')",
       },
       colors: {
         white: '#ffffff',

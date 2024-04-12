@@ -17,6 +17,8 @@ export default function Footer() {
 
   const { bg } = context;
 
+  const date = new Date().getFullYear();
+
   return (
     <div className="w-[100%] h-[500px] relative pt-[80px] overflow-hidden rounded-[40px] ">
       <div
@@ -27,7 +29,7 @@ export default function Footer() {
         <div className="flex-1 w-full h-full flex flex-col gap-[24px] align-center  p-[40px]">
           <Logo width={100} height={90} />
           <p className="text-grey text-[16px] font-comfota">
-            © 2024 MilkyWay. All rights reserved.
+            © {date} MilkyWay. All rights reserved.
           </p>
         </div>
         <div className="flex-1 w-full h-full flex flex-col gap-[24px] align-center  p-[40px]">

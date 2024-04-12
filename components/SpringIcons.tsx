@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import { AppContext } from '@/context/index';
 import Image from 'next/image';
 import { motion, useMotionValue, useSpring } from 'framer-motion';
 import {
@@ -21,8 +22,8 @@ import { TbBrandNextjs, TbBrandReactNative } from 'react-icons/tb';
 import { distance } from '@popmotion/popcorn';
 import NIcon from '@/assets/nextjs.svg';
 
-const size = 60;
-const gap = 10;
+// const size = 40;
+const gap = 5;
 
 const Square = ({
   active,
@@ -45,6 +46,19 @@ const Square = ({
   };
   const dx = useSpring(x, springConfig);
   const dy = useSpring(y, springConfig);
+
+  const context = useContext(AppContext);
+
+  if (!context) {
+    throw new Error('AppContext must be used within an Application');
+  }
+
+  const { isNavOpen, screen } = context;
+
+  if (isNavOpen) {
+    return null;
+  }
+  const size = screen === 'sm' ? 40 : 60;
 
   const left =
     ((gridWidth - (rowIndex + 1)) * (size + gap)) / 2 + colIndex * (size + gap);
@@ -79,7 +93,7 @@ const Square = ({
           style={{
             fill: `#FFF`,
           }}
-          size="70px"
+          size="60px"
         />
       ) : (
         <Image
@@ -105,6 +119,19 @@ export default function SpringIcons() {
     [SiPostgresql, SiMysql, SiMongodb, SiFirebase, FaAws],
     [SiGooglecloud, SiTailwindcss],
   ];
+
+  const context = useContext(AppContext);
+
+  if (!context) {
+    throw new Error('AppContext must be used within an Application');
+  }
+
+  const { isNavOpen, screen } = context;
+
+  if (isNavOpen) {
+    return null;
+  }
+  const size = screen === 'sm' ? 40 : 60;
 
   const gridWidth = gridIcons[gridIcons.length - 1].length;
 

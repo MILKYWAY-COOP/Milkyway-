@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { categories } from '@/data/data';
 import { IoClose } from 'react-icons/io5';
@@ -12,31 +12,46 @@ export default function Cards() {
 
   const IconComponent = categories[parseInt(selectedId || '1')].icon;
 
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const scrollY = () => {
+    if (containerRef.current) {
+      return containerRef.current.scrollTop;
+    }
+  };
+
+  console.log('scrollY', scrollY());
+
   return (
     <div
-      className="flex flex-col w-full align-center justify-center rounded-[20px] relative"
+      className="flex flex-col w-[100%] align-center justify-center rounded-[20px] relative overflow-hidden"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => {
         setIsHovered(false);
         setSelectedId(null);
       }}
     >
-      <div className="flex flex-col justify-center align-center gap-[24px]">
-        <h1 className="text-white text-[44px] text-center">Tech Stack</h1>
-        <h2 className="text-[16px] mb-4 text-center font-comfota text-grey">
+      <div className="w-[100%] flex flex-col justify-center align-center gap-[16px] md:gap-[24px] overflow-hidden">
+        <h1 className="text-white md:text-[44px] text-[30px] text-center">
+          Tech Stack
+        </h1>
+        <h2 className="text-[14px] md:text-[16px] mb-4 text-center font-comfota text-grey">
           We work with a variety of technologies, including but not limited to:
         </h2>
       </div>
-      <div className="relative w-full flex flex-wrap gap-[32px] align-center justify-center grid-custom">
+      <div
+        className="relative w-[100%] flex flex-wrap gap-[32px] align-center justify-center overflew-hidden"
+        ref={containerRef}
+      >
         {categories.map((category, index) => (
           <FadeInWhenVisible key={index}>
             <motion.div
               layoutId={index.toString()}
-              className="w-[476px] h-[492px] rounded-[28px] border-[2px] border-contrast2 px-[40px] py-[32px] overflow-hidden relative flex flex-col gap-[28px]"
+              className="w-[300px] h-[full] md:w-[33vw] lg:w-[476px] md:h-[492px] rounded-[28px] border-[2px] border-contrast2 p-[20px] md:px-[40px] md:py-[32px] overflow-hidden relative flex flex-col gap-[28px]"
             >
               <motion.div className="flex align-center gap-[16px]">
                 <category.icon width={48} height={48} />
-                <motion.h2 className="text-white text-[24px] font-comfota">
+                <motion.h2 className="text-white text-[20px] md:text-[24px] font-comfota">
                   {category.name}
                 </motion.h2>
               </motion.div>
@@ -44,7 +59,7 @@ export default function Cards() {
                 {category.technologies.slice(0, 8).map((tech, techIndex) => (
                   <motion.li key={techIndex}>
                     <TiTick className="inline-block mr-2" fill="#FFCC00" />
-                    <motion.span className="text-greyB text-[20px] font-comfota">
+                    <motion.span className="text-greyB md:text-[20px] font-comfota">
                       {tech}
                     </motion.span>
                   </motion.li>
@@ -75,12 +90,14 @@ export default function Cards() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className={`absolute z-30 min-w-[400px] bg-stars overflow-hidden`}
-              style={{
-                top: '20%',
-                left: '40%',
-                transform: 'translate(-20%, -40%)',
-              }}
+              className={`absolute z-30 min-w-[400px] bg-stars overflow-hidden t-${scrollY()} md:t-[20%] md:l-[40%] md:translate-x-[-20%] md:translate-y-[-40%]`}
+              style={
+                {
+                  // top: '20%',
+                  // left: '40%',
+                  // transform: 'translate(-20%, -40%)',
+                }
+              }
             >
               <motion.div className="animate-bg inset-0 rounded-lg p-4">
                 <motion.div className="w-full flex justify-end">
@@ -92,7 +109,11 @@ export default function Cards() {
                   </motion.button>
                 </motion.div>
 
-                <motion.ul className="flex flex-col gap-[16px]" initial="hidden" animate="visible">
+                <motion.ul
+                  className="flex flex-col gap-[16px]"
+                  initial="hidden"
+                  animate="visible"
+                >
                   <motion.div className="flex align-center gap-[16px]">
                     <IconComponent width={48} height={48} fill="#fff" />
                     <motion.h2 className="text-white text-[24px]">
