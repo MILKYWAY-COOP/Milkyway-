@@ -92,7 +92,7 @@ export default function Cards() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className={`absolute z-30 min-w-[400px] bg-stars overflow-hidden t-${scrollY()} md:t-[20%] md:l-[40%] md:translate-x-[-20%] md:translate-y-[-40%]`}
+              className={`absolute z-30 md:min-w-[400px] bg-stars overflow-hidden t-${scrollY()} md:t-[20%] md:l-[40%] md:translate-x-[-20%] md:translate-y-[-40%]`}
               style={
                 {
                   // top: '20%',

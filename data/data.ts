@@ -21,7 +21,6 @@ const FrontEnd = [
   'Bootstrap',
   'Tailwind CSS',
   'Material UI',
-  'Semantic UI',
   'WordPress + CMS Development',
   'Semantic Ui',
 ];

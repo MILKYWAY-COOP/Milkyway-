@@ -29,7 +29,7 @@ export default function Projects() {
       className="w-full flex flex-col align-center justify-center relative "
       ref={ref}
     >
-      <FadeInWhenVisible className="text-white md:text-[44px] text-[26px] mb-[24px] font-comfota text-center sticky top-[90px] pt-[40px]">
+      <FadeInWhenVisible className="text-white md:text-[44px] text-[26px] mb-[24px] font-comfota text-center sticky top-[0px] pt-[20px]">
         <h1 className="sticky top-[0px]">Work</h1>
       </FadeInWhenVisible>
       {projects.map((project, index) => {
