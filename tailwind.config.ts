@@ -15,6 +15,12 @@ const config: Config = {
           "linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url('/milkysky.webp')",
         'custom-bg2':
           "linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url('/milkysky2.webp')",
+        'custom-bg3':
+          "linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url('/milkysky3.webp')",
+        'custom-bg4':
+          "linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url('/milkysky4.webp')",
+        'custom-bg5':
+          "linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url('/milkysky5.webp')",
         stars: "url('/bg.png')",
         koimbi: "url('/Koimbi.png')",
       },

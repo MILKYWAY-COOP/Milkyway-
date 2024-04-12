@@ -31,12 +31,15 @@ export default function Cards() {
       id="Services"
     >
       <div className="w-[100%] flex flex-col justify-center align-center gap-[16px] md:gap-[24px] overflow-hidden">
-        <h1 className="text-white md:text-[44px] text-[30px] text-center">
-          Tech Stack
-        </h1>
-        <h2 className="text-[14px] md:text-[16px] mb-4 text-center font-comfota text-grey">
-          We work with a variety of technologies, including but not limited to:
-        </h2>
+        <FadeInWhenVisible>
+          <h1 className="text-white md:text-[44px] text-[30px] text-center">
+            Tech Stack
+          </h1>
+          <h2 className="text-[14px] md:text-[16px] mb-4 text-center font-comfota text-grey">
+            We work with a variety of technologies, including but not limited
+            to:
+          </h2>
+        </FadeInWhenVisible>
       </div>
       <div
         className="relative w-[100%] flex flex-wrap gap-[32px] align-center justify-center overflew-hidden"
@@ -46,7 +49,7 @@ export default function Cards() {
           <FadeInWhenVisible key={index}>
             <motion.div
               layoutId={index.toString()}
-              className="w-[300px] h-[400px] md:w-[33vw] xl:h-[492px] rounded-[28px] border-[2px] border-contrast2 p-[20px] md:px-[40px] md:py-[32px] overflow-hidden relative flex flex-col gap-[28px]"
+              className="w-[300px] h-[400px] md:w-[25vw] lg:w-[400px] xl:h-[492px] rounded-[28px] border-[2px] border-contrast2 p-[20px] md:px-[40px] md:py-[32px] overflow-hidden relative flex flex-col gap-[28px]"
             >
               <motion.div className="flex align-center gap-[16px]">
                 <category.icon width={48} height={48} />
@@ -72,14 +75,14 @@ export default function Cards() {
                           ? setSelectedId(index.toString())
                           : setSelectedId(null);
                       }}
-                    > 
+                    >
                       Expand
                     </motion.button>
                   </motion.li>
                 )}
               </motion.ul>
             </motion.div>
-          </FadeInWhenVisible>   
+          </FadeInWhenVisible>
         ))}
 
         <AnimatePresence>

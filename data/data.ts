@@ -128,7 +128,8 @@ export const projects = [
       'API',
     ],
     image: Jays,
-    description: 'Jays is ',
+    description:
+      'Jays is bus management software that helps bus companies manage their fleet.',
     accent: '#0E062E',
   },
   {

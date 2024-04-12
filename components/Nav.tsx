@@ -14,10 +14,16 @@ import Stackoverflow from '@/assets/stackoverflow';
 import Upwork from '@/assets/upwork';
 import Link from 'next/link';
 import Logo from '@/assets/logo';
+import FadeInLeftWhenVisible from '@/utils/fadeInWhenVisible';
 
 export default function Nav() {
   const [isHovered, setIsHovered] = useState<string | null>(null);
   const navItems = ['Services', 'Giving Back', 'Work', 'Blog', 'Contact Us'];
+
+  const scrollToSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId) as HTMLElement;
+    section.scrollIntoView({ behavior: 'smooth' });
+  };
 
   const context = useContext(AppContext);
 
@@ -85,7 +91,18 @@ export default function Nav() {
                 >
                   [
                 </motion.span>
-                <a href={`#${item}`}>{item}</a>
+                <a
+                  id={item === 'Blog' ? 'Blog' : ''}
+                  href={
+                    item === 'Blog'
+                    ? 'https://steveatmilkyway.blogspot.com/'
+                    : undefined
+                  }
+                  onClick={() => scrollToSection(`${item}`)}
+                  target='_blank'
+                >
+                  {item}
+                </a>
                 <motion.span
                   variants={slideBracketRight}
                   initial="hidden"
@@ -145,13 +162,37 @@ export default function Nav() {
         </motion.div>
         <motion.ul className="w-full flex flex-col justify-center ">
           {navItems.map((item, index) => (
-            <motion.li
-              key={item}
-              className="text-white cursor-pointer text-[26px] py-[33px] text-center"
-              variants={slideInFromLeft(0.2 * index)}
-            >
-              {item}
-            </motion.li>
+            <FadeInLeftWhenVisible delay={0.2 * index} key={item}>
+              <motion.li
+                className="text-white cursor-pointer text-[26px] py-[33px] text-center"
+                // variants={slideInFromLeft(0.2 * index)}
+              >
+                <motion.span
+                  variants={slideBracketLeft}
+                  initial="hidden"
+                  animate={isHovered === item ? 'hover' : 'hidden'}
+                  className="absolute"
+                >
+                  [
+                </motion.span>
+                <a
+                  onClick={() => {
+                    setIsNavOpen(false);
+                    scrollToSection(`${item}`);
+                  }}
+                >
+                  {item}
+                </a>
+                <motion.span
+                  variants={slideBracketRight}
+                  initial="hidden"
+                  animate={isHovered === item ? 'hover' : 'hidden'}
+                  className="absolute"
+                >
+                  ]
+                </motion.span>
+              </motion.li>
+            </FadeInLeftWhenVisible>
           ))}
         </motion.ul>
         <motion.div className="w-full">

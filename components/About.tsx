@@ -1,5 +1,9 @@
 import { motion } from 'framer-motion';
 import FadeInWhenVisible from '@/utils/fadeInWhenVisible';
+import {
+  FadeInLeftWhenVisible,
+  FadeInRightWhenVisible,
+} from '@/utils/fadeInWhenVisible';
 import TopRatedIcon from '@/assets/topRated';
 import SatisfactionIcon from '@/assets/satisfaction';
 import DiscountIcon from '@/assets/discount';
@@ -34,21 +38,20 @@ export default function About() {
             About Us
           </motion.h1>
         </FadeInWhenVisible>
-        <motion.span
-          className="text-greyB font-comfota text-[14px] lg:text-[18px]"
-          variants={slideInFromLeft(0.3)}
-        >
-          We are software development company solely focused on creating
-          cutting-edge software solutions, driven by a profound passion and
-          motivation for technological innovation. We are committed to
-          prioritizing efficient project delivery, ensuring that each project is
-          completed within the agreed-upon budget constraints. Our goal is to
-          set new standards in software development, by consistently delivering
-          exceptional and timely solutions that meet and exceed our
-          clients&apos; expectations. Our approach combines a blend of
-          expertise, innovation, and a deep understanding of the latest
-          technological trends to deliver unparalleled value.{' '}
-        </motion.span>
+        <FadeInLeftWhenVisible delay={0.2}>
+          <motion.span className="text-greyB font-comfota text-[14px] lg:text-[18px]">
+            We are software development company solely focused on creating
+            cutting-edge software solutions, driven by a profound passion and
+            motivation for technological innovation. We are committed to
+            prioritizing efficient project delivery, ensuring that each project
+            is completed within the agreed-upon budget constraints. Our goal is
+            to set new standards in software development, by consistently
+            delivering exceptional and timely solutions that meet and exceed our
+            clients&apos; expectations. Our approach combines a blend of
+            expertise, innovation, and a deep understanding of the latest
+            technological trends to deliver unparalleled value.{' '}
+          </motion.span>
+        </FadeInLeftWhenVisible>
         <motion.div className="flex gap-[32px] mt-[32px]">
           {data.map((item, index) => (
             <FadeInWhenVisible key={index}>
@@ -61,12 +64,11 @@ export default function About() {
             </FadeInWhenVisible>
           ))}
         </motion.div>
-        <motion.h1
-          className="text-[24px] text-white mt-[44px]"
-          variants={slideInFromLeft(0.3)}
-        >
-          Stephen Muchendu - Founder
-        </motion.h1>
+        <FadeInLeftWhenVisible delay={0.3}>
+          <motion.h1 className="text-[24px] text-white mt-[44px]">
+            Stephen Muchendu - Founder
+          </motion.h1>
+        </FadeInLeftWhenVisible>
         <motion.div className="mt-[40px] flex gap-[20px] md:flex-row flex-col">
           <motion.button
             className="border-[1px] rounded-[24px] border-contrast1 px-[24px] py-[12px] text-white text-[18px] w-fit"
@@ -83,7 +85,7 @@ export default function About() {
           </motion.button>
         </motion.div>
       </motion.div>
-      <motion.div variants={slideInFromRight(0.3)}>
+      <FadeInRightWhenVisible delay={0.2}>
         <motion.video
           autoPlay
           loop
@@ -92,7 +94,7 @@ export default function About() {
           src="/blackhol.mp4"
           style={{ objectFit: 'cover', objectPosition: 'center' }}
         />
-      </motion.div>
+      </FadeInRightWhenVisible>
     </motion.div>
   );
 }

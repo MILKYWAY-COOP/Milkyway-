@@ -29,11 +29,9 @@ export default function ProjectCard({
 
   const { screen } = context;
 
-  console.log(screen);
-
   return (
     <motion.div
-      className={`w-full flex align-center justify-center sticky `}
+      className={`w-full flex align-center justify-center sticky mb-[24px]`}
       ref={ref}
       style={{
         top: `calc(15% + ${index * 25}px)`,
@@ -86,7 +84,7 @@ export default function ProjectCard({
         <div
           className={`xl:h-[435px] overflow-hidden relative ${
             screen === 'sm' || screen === 'md' || screen === 'lg'
-              ? 'rounded-[16px]'
+              ? ''
               : 'rounded-[20px]'
           }`}
           style={{

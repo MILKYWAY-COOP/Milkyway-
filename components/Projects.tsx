@@ -3,6 +3,7 @@ import ProjectCard from './ProjectCard';
 import { motion, useScroll } from 'framer-motion';
 import { useRef, useEffect } from 'react';
 import Lenis from '@studio-freight/lenis';
+import FadeInWhenVisible from '@/utils/fadeInWhenVisible';
 
 export default function Projects() {
   const ref = useRef(null);
@@ -27,11 +28,10 @@ export default function Projects() {
     <motion.div
       className="w-full flex flex-col align-center justify-center relative pt-[40px]"
       ref={ref}
-      id="Work"
     >
-      <h1 className="text-white md:text-[44px] text-[26px] mb-[24px] font-comfota text-center sticky top-[100px] ">
-        Work
-      </h1>
+      <FadeInWhenVisible className="text-white md:text-[44px] text-[26px] mb-[24px] font-comfota text-center sticky top-[50px] ">
+        <h1 className="sticky">Work</h1>
+      </FadeInWhenVisible>
       {projects.map((project, index) => {
         const target = 1 - (projects.length - index) * 0.05;
         return (

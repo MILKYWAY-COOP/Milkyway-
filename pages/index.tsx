@@ -16,13 +16,18 @@ export default function Page() {
         className={`w-full flex flex-col items-start justify-center relative bg-stars gap-[60px] lg:gap-[160px] pb-[80px] `}
       >
         <Hero />
-        <div className="flex flex-col md:gap-[80px] gap-[60px] lg:gap-[160px] px-[40px] md:px-[104px] xl:px-[204px]">
+        <div className="flex flex-col md:gap-[80px] gap-[60px] lg:gap-[100px] px-[40px] md:px-[104px] xl:px-[150px]">
           <Cards />
           <About />
         </div>
         <Giving />
-        <div className="flex flex-col xl:gap-[80px] gap-[60px] lg:gap-[160px] px-[40px] md:px-[104px] xl:px-[204px]">
+        <div
+          className="flex flex-col xl:gap-[80px] gap-[60px] lg:gap-[100px] px-[40px] md:px-[104px] xl:px-[150px]"
+          id="Work"
+        >
           <Projects />
+        </div>
+        <div className="w-full flex flex-col xl:gap-[80px] gap-[60px] lg:gap-[100px] px-[40px] md:px-[104px] xl:px-[150px]">
           <Contact />
           <Footer />
         </div>
