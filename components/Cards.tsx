@@ -1,10 +1,11 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useContext } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { categories } from '@/data/data';
 import { IoClose } from 'react-icons/io5';
 import { TiTick } from 'react-icons/ti';
 import FadeInWhenVisible from '@/utils/fadeInWhenVisible';
 import { slideInFromLeft } from '@/utils/motion';
+import { AppContext } from '@/context/index';
 
 export default function Cards() {
   const [selectedId, setSelectedId] = useState<string | null>(null);
@@ -19,6 +20,14 @@ export default function Cards() {
       return containerRef.current.scrollTop;
     }
   };
+
+  const context = useContext(AppContext);
+
+  if (!context) {
+    throw new Error('AppContext must be used within an Application');
+  }
+
+  const { screen } = context;
 
   return (
     <div
@@ -49,7 +58,7 @@ export default function Cards() {
           <FadeInWhenVisible key={index}>
             <motion.div
               layoutId={index.toString()}
-              className="w-[300px] h-[400px] md:w-[25vw] lg:w-[400px] xl:h-[492px] rounded-[28px] border-[2px] border-contrast2 p-[20px] md:px-[40px] md:py-[32px] overflow-hidden relative flex flex-col gap-[28px]"
+              className="w-[300px] md:w-[250px] h-[100%] xl:w-[400px] xl:h-[492px] rounded-[28px] border-[2px] border-contrast2 p-[20px] md:px-[40px] md:py-[32px] overflow-hidden relative flex flex-col gap-[28px]"
             >
               <motion.div className="flex align-center gap-[16px]">
                 <category.icon width={48} height={48} />
@@ -59,7 +68,26 @@ export default function Cards() {
               </motion.div>
               <motion.ul className="flex flex-col gap-[12px] xl:gap-[16px]">
                 {category.technologies.slice(0, 8).map((tech, techIndex) => (
-                  <motion.li key={techIndex}>
+                  <motion.li
+                    key={techIndex}
+                    className={`
+                    ${screen === 'sm' ? 'hidden' : 'block'}
+                  `}
+                  >
+                    <TiTick className="inline-block mr-2" fill="#FFCC00" />
+                    <motion.span className="text-greyB text-[14px] xl:text-[20px] font-comfota">
+                      {tech}
+                    </motion.span>
+                  </motion.li>
+                ))}
+                {category.technologies.map((tech, techIndex) => (
+                  <motion.li
+                    key={techIndex}
+                    className={`
+                    ${screen === 'sm' ? 'block' : 'hidden'}
+                  `}
+                    variants={slideInFromLeft(0.15 * techIndex)}
+                  >
                     <TiTick className="inline-block mr-2" fill="#FFCC00" />
                     <motion.span className="text-greyB text-[14px] xl:text-[20px] font-comfota">
                       {tech}
@@ -69,7 +97,9 @@ export default function Cards() {
                 {category.technologies.length > 9 && (
                   <motion.li>
                     <motion.button
-                      className="bg-contrast1 w-auto p-1 rounded absolute bottom-0 right-0 text-comfota cursor-pointer text-[14px] xl:text-[20px]"
+                      className={`bg-contrast1 w-auto p-1 rounded absolute bottom-0 right-0 text-comfota cursor-pointer text-[14px] xl:text-[20px]
+                      ${screen === 'sm' ? 'hidden' : 'block'}
+                      `}
                       onClick={() => {
                         selectedId === null
                           ? setSelectedId(index.toString())
