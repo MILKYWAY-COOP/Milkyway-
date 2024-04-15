@@ -53,6 +53,7 @@ const scodecontrol = ['Git', 'GitHub', 'GitLab', 'Bitbucket'];
 
 const thirdPartyAPI = [
   'Chat gpt API',
+  'Stripe API',
   'Google Maps API',
   'WhatsApp Business API',
 ];

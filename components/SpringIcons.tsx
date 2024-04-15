@@ -16,6 +16,7 @@ import {
   SiGooglecloud,
   SiTailwindcss,
   SiMysql,
+  SiStripe,
 } from 'react-icons/si';
 import { FaNode, FaVuejs, FaAws } from 'react-icons/fa';
 import { TbBrandNextjs, TbBrandReactNative } from 'react-icons/tb';
@@ -114,10 +115,10 @@ export default function SpringIcons() {
   const gridIcons = [
     [SiJavascript],
     [FaNode, SiTypescript],
-    [SiPrisma, SiStrapi, SiReact],
+    [SiPrisma, SiStripe, SiReact],
     [NIcon, TbBrandReactNative, SiNestjs, FaVuejs],
     [SiPostgresql, SiMysql, SiMongodb, SiFirebase, FaAws],
-    [SiGooglecloud, SiTailwindcss],
+    [SiGooglecloud, SiTailwindcss, SiStrapi],
   ];
 
   const context = useContext(AppContext);
