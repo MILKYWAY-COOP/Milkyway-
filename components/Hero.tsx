@@ -37,7 +37,7 @@ export default function Hero() {
       } lg:px-[80px] md:px-[60px] sm:px-[40px] px-[20px] bg-cover bg-center overflow-hidden`}
     >
       <Nav />
-      <div className="w-[100vw] h-[calc(100vh-149.219px)] flex flex-col items-center mt-[50px] overflow-hidden gap-[60px]">
+      <div className="w-[100vw] h-full flex flex-col items-center overflow-hidden gap-[60px]">
         <motion.div variants={slideInFromLeft(delayValue)}>
           <p className="text-white font-comfota md:text-[50px] sm:text-[40px] text-[40px] text-center">
             MilkyWay Cooperation

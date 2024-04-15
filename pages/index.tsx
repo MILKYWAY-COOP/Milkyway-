@@ -11,10 +11,10 @@ import './globals.css';
 
 export default function Page() {
   return (
-    <div
-      className={`w-full flex flex-col items-start justify-center relative bg-stars gap-[60px] lg:gap-[160px] pb-[80px] app`}
-    >
-      <Application>
+    <Application>
+      <div
+        className={`w-full flex flex-col items-start justify-center relative bg-stars gap-[60px] lg:gap-[160px] pb-[80px] app`}
+      >
         <Hero />
         <div className="flex flex-col md:gap-[80px] gap-[60px] lg:gap-[100px] px-[40px] md:px-[104px] xl:px-[150px]">
           <Cards />
@@ -31,7 +31,7 @@ export default function Page() {
           <Contact />
           <Footer />
         </div>
-      </Application>
-    </div>
+      </div>
+    </Application>
   );
 }

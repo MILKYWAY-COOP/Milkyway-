@@ -167,87 +167,89 @@ export default function Nav() {
         </motion.button>
       </motion.div>
 
-      <motion.div
-        className={`w-full h-[100vh] flex-col gap-4 absolute transition-all duration-500 bg-stars z-9999 p-[28px] ${
-          isNavOpen ? 'mobileNav active' : 'mobileNav-hidden inactive'
-        }`}
-      >
-        <motion.div className="w-full flex align-center justify-end">
-          <motion.button
-            onClick={() => setIsNavOpen(false)}
-            className="text-white cursor-pointer"
-          >
-            <IoClose size={30} />
-          </motion.button>
-        </motion.div>
-        <motion.ul className="w-full flex flex-col justify-center ">
-          {navItems.map((item, index) => (
-            <FadeInLeftWhenVisible delay={0.2 * index} key={item}>
-              <motion.li
-                className="text-white cursor-pointer text-[26px] py-[33px] text-center"
-                // variants={slideInFromLeft(0.2 * index)}
-              >
-                <motion.span
-                  variants={slideBracketLeft}
-                  initial="hidden"
-                  animate={isHovered === item ? 'hover' : 'hidden'}
-                  className="absolute"
+      {isNavOpen && (
+        <motion.div
+          className={`w-full h-[100vh] flex-col gap-4 absolute transition-all duration-500 bg-stars z-9999 p-[28px] ${
+            isNavOpen ? 'mobileNav active' : 'mobileNav-hidden inactive'
+          }`}
+        >
+          <motion.div className="w-full flex align-center justify-end">
+            <motion.button
+              onClick={() => setIsNavOpen(false)}
+              className="text-white cursor-pointer"
+            >
+              <IoClose size={30} />
+            </motion.button>
+          </motion.div>
+          <motion.ul className="w-full flex flex-col justify-center ">
+            {navItems.map((item, index) => (
+              <FadeInLeftWhenVisible delay={0.2 * index} key={item}>
+                <motion.li
+                  className="text-white cursor-pointer text-[26px] py-[33px] text-center"
+                  // variants={slideInFromLeft(0.2 * index)}
                 >
-                  [
-                </motion.span>
-                <a
-                  onClick={() => {
-                    setIsNavOpen(false);
-                    scrollToSection(`${item}`);
-                  }}
-                >
-                  {item}
-                </a>
-                <motion.span
-                  variants={slideBracketRight}
-                  initial="hidden"
-                  animate={isHovered === item ? 'hover' : 'hidden'}
-                  className="absolute"
-                >
-                  ]
-                </motion.span>
-              </motion.li>
-            </FadeInLeftWhenVisible>
-          ))}
-        </motion.ul>
+                  <motion.span
+                    variants={slideBracketLeft}
+                    initial="hidden"
+                    animate={isHovered === item ? 'hover' : 'hidden'}
+                    className="absolute"
+                  >
+                    [
+                  </motion.span>
+                  <a
+                    onClick={() => {
+                      setIsNavOpen(false);
+                      scrollToSection(`${item}`);
+                    }}
+                  >
+                    {item}
+                  </a>
+                  <motion.span
+                    variants={slideBracketRight}
+                    initial="hidden"
+                    animate={isHovered === item ? 'hover' : 'hidden'}
+                    className="absolute"
+                  >
+                    ]
+                  </motion.span>
+                </motion.li>
+              </FadeInLeftWhenVisible>
+            ))}
+          </motion.ul>
 
-        <motion.div className="w-full border-t-[1px] border-white p-[20px]">
-          <motion.div className="flex justify-center gap-4">
-            <Link href="/">
-              <Upwork width={30} height={30} />
-            </Link>
-            <Link href="/">
-              <Github width={30} height={30} />
-            </Link>
-            <Link href="/">
-              <Linkedin width={30} height={30} />
-            </Link>
-            <Link href="/">
-              <Stackoverflow width={30} height={30} />
-            </Link>
+          <motion.div className="w-full border-t-[1px] border-white p-[20px]">
+            <motion.div className="flex justify-center gap-4">
+              <Link href="/">
+                <Upwork width={30} height={30} />
+              </Link>
+              <Link href="/">
+                <Github width={30} height={30} />
+              </Link>
+              <Link href="/">
+                <Linkedin width={30} height={30} />
+              </Link>
+              <Link href="/">
+                <Stackoverflow width={30} height={30} />
+              </Link>
+            </motion.div>
+          </motion.div>
+
+          <motion.div className="w-full flex justify-center align-center gap-4 flex-col">
+            <p className="text-white text-[14px] text-center">
+              Need help ? Talk to an expert
+            </p>
+            <p className="text-white text-[14px] text-center">
+              <a
+                href="https://wa.me/254799710693"
+                target="_blank"
+                style={{ color: 'inherit', textDecoration: 'none' }}
+              >
+                +254 799 710693
+              </a>
+            </p>
           </motion.div>
         </motion.div>
-
-        <motion.div className="w-full flex justify-center align-center gap-4 flex-col">
-          <p className="text-white text-[14px] text-center">
-            Need help ? Talk to an expert
-          </p>
-          <p className="text-white text-[14px] text-center">
-            <a
-              href="https://wa.me/254799710693"
-              target="_blank"
-              style={{ color: 'inherit', textDecoration: 'none' }}
-            >
-              +254 799 710693
-            </a>
-          </p>
-        </motion.div>
-      </motion.div>
+      )}
     </motion.div>
   );
 }

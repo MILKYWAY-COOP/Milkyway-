@@ -4,7 +4,7 @@ export default function Document() {
   return (
     <Html> 
       <Head />
-      <body className='bg-stars'>
+      <body className='bg-stars w-[100vw]'>
         <Main />
         <NextScript />
       </body>
