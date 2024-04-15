@@ -8,6 +8,8 @@ body {
   border: 0px;
   margin: 0px;
   box-sizing: border-box;
+  overflow-x: hidden;
+  
 }
 
 :root {
@@ -58,6 +60,7 @@ body {
 
 body::-webkit-scrollbar {
   width: 1px;
+  height: 1px;
 }
 
 body::-webkit-scrollbar-thumb {
