@@ -26,6 +26,11 @@ const data = [
 ];
 
 export default function About() {
+  const scrollToSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId) as HTMLElement;
+    section.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <motion.div
       className="w-full h-full flex gap-[60px] align-center justify-center lg:flex-row flex-col-reverse"
@@ -73,6 +78,7 @@ export default function About() {
           <motion.button
             className="border-[1px] rounded-[24px] border-contrast1 px-[24px] py-[12px] text-white text-[18px] w-fit"
             variants={slideInFromLeft(0.3)}
+            onClick={() => scrollToSection(`Contact Us`)}
           >
             Contact Us
           </motion.button>

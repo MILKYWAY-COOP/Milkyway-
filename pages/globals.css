@@ -4,6 +4,12 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  border: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -107,5 +113,9 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .mobileNav-hidden.inactive {
-  /* animation: slideOut 0.5s forwards; */
+  animation: slideOut 0.5s forwards;
+}
+
+.app-no-overflow {
+  overflow-x: hidden;
 }

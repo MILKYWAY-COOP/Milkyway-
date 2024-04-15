@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { useState, useContext } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import { AppContext } from '@/context/index';
 import {
   slideInFromLeft,
@@ -32,6 +32,18 @@ export default function Nav() {
   }
 
   const { screen, isNavOpen, setIsNavOpen } = context;
+
+  useEffect(() => {
+    const app = document.querySelector('.app');
+    if (isNavOpen) {
+      app?.classList.add('app-no-overflow');
+    } else {
+      app?.classList.remove('app-no-overflow');
+    }
+    return () => {
+      app?.classList.remove('app-no-overflow');
+    };
+  }, [isNavOpen]);
 
   return (
     <motion.div
@@ -156,7 +168,7 @@ export default function Nav() {
       </motion.div>
 
       <motion.div
-        className={`w-full flex-col gap-4 absolute transition-all duration-500 bg-stars z-9999 p-[28px] ${
+        className={`w-full h-[100vh] flex-col gap-4 absolute transition-all duration-500 bg-stars z-9999 p-[28px] ${
           isNavOpen ? 'mobileNav active' : 'mobileNav-hidden inactive'
         }`}
       >
