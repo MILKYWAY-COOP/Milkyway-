@@ -23,9 +23,6 @@ import { TbBrandNextjs, TbBrandReactNative } from 'react-icons/tb';
 import { distance } from '@popmotion/popcorn';
 import NIcon from '@/assets/nextjs.svg';
 
-// const size = 40;
-const gap = 5;
-
 const Square = ({
   active,
   setActive,
@@ -59,7 +56,10 @@ const Square = ({
   if (isNavOpen) {
     return null;
   }
-  const size = screen === 'sm' ? 40 : 60;
+
+  const size =
+    screen === 'sm' ? 40 : screen === 'md' ? 45 : screen === 'lg' ? 50 : 55;
+  const gap = 5;
 
   const left =
     ((gridWidth - (rowIndex + 1)) * (size + gap)) / 2 + colIndex * (size + gap);
@@ -132,52 +132,59 @@ export default function SpringIcons() {
   if (isNavOpen) {
     return null;
   }
-  const size = screen === 'sm' ? 40 : 60;
+  const size = screen === 'sm' ? 40 : screen === 'md' ? 45 : 80;
+  const gap = 5;
 
   const gridWidth = gridIcons[gridIcons.length - 1].length;
 
   return (
-    <motion.div transition={{ duration: 10, loop: Infinity, ease: 'linear' }}>
-      <motion.div
-        animate={{ scale: 1.2 }}
-        transition={{
-          type: 'spring',
-          damping: 2,
-          stiffness: 50,
-          restDelta: 0.001,
-          duration: 10,
-          loop: Infinity,
-          ease: 'linear',
-        }}
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          position: 'relative',
-          width: (size + gap) * 4 - gap,
-          height: (size + gap) * 4 - gap,
-          top: '30%',
-          left: '20%',
-          transform: 'translate(-30%, -30%)',
-          perspective: 500,
-        }}
-      >
-        {gridIcons.map((row, rowIndex) =>
-          row.map((IconComponent, colIndex) => (
-            <Square
-              x={x}
-              y={y}
-              active={active}
-              setActive={setActive}
-              rowIndex={rowIndex}
-              colIndex={colIndex}
-              key={rowIndex + colIndex}
-              Icon={IconComponent || (() => null)}
-              gridWidth={gridWidth}
-            />
-          ))
-        )}
-      </motion.div>
+    <motion.div
+      animate={{ scale: 1.2 }}
+      transition={{
+        type: 'spring',
+        damping: 2,
+        stiffness: 50,
+        restDelta: 0.001,
+        duration: 10,
+        loop: Infinity,
+        ease: 'linear',
+      }}
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        position: 'relative',
+        width: (size + gap) * 4 - gap,
+        height: (size + gap) * 4 - gap,
+        top: '30%',
+        left: `${
+          screen === 'sm'
+            ? '-15%'
+            : screen === 'md'
+            ? '-10%'
+            : screen === 'lg'
+            ? '-5%'
+            : '20%'
+        }`,
+        transform: 'translate(30%, -30%)',
+        perspective: 500,
+      }}
+    >
+      {gridIcons.map((row, rowIndex) =>
+        row.map((IconComponent, colIndex) => (
+          <Square
+            x={x}
+            y={y}
+            active={active}
+            setActive={setActive}
+            rowIndex={rowIndex}
+            colIndex={colIndex}
+            key={rowIndex + colIndex}
+            Icon={IconComponent || (() => null)}
+            gridWidth={gridWidth}
+          />
+        ))
+      )}
     </motion.div>
   );
 }
