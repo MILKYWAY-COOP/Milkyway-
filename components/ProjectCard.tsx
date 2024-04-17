@@ -30,14 +30,14 @@ export default function ProjectCard({
 
   return (
     <motion.div
-      className={`w-full flex align-center justify-center sticky mb-[20px]`}
+      className={`w-[100%] flex align-center justify-center sticky mb-[20px]`}
       ref={ref}
       style={{
         top: `calc(15% + ${index * 25}px)`,
       }}
     >
       <motion.div
-        className={`w-full xl:h-[575px] rounded-[16px] md:rounded-[24px] xl:gap-[40px] ${
+        className={`w-[100%] xl:h-[575px] rounded-[16px] md:rounded-[24px] xl:gap-[40px] ${
           screen === 'xl' || screen === '2xl' ? 'p-[40px]' : ''
         }
         }]`}

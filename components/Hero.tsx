@@ -34,7 +34,7 @@ export default function Hero() {
           : bg === 'custom-bg5'
           ? 'bg-custom-bg5'
           : ''
-      } lg:px-[80px] md:px-[60px] sm:px-[40px] px-[20px] bg-cover bg-center overflow-hidden`}
+      } lg:px-[80px] md:px-[60px] sm:px-[20px] bg-cover bg-center overflow-hidden`}
     >
       <Nav />
       <div className="w-[100vw] h-full flex flex-col items-center overflow-hidden gap-[60px]">
