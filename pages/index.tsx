@@ -13,7 +13,7 @@ export default function Page() {
   return (
     <Application>
       <div
-        className={`w-full flex flex-col items-start justify-center relative bg-stars gap-[60px] lg:gap-[160px] pb-[80px] app`}
+        className={`w-full flex flex-col items-start justify-center relative bg-stars gap-[60px] lg:gap-[160px]  app`}
       >
         <Hero />
         <div className="flex flex-col md:gap-[80px] gap-[60px] lg:gap-[100px] px-[20px] md:px-[104px] xl:px-[150px]">
@@ -29,8 +29,8 @@ export default function Page() {
         </div>
         <div className="w-full flex flex-col xl:gap-[80px] gap-[60px] lg:gap-[100px] px-[20px] md:px-[104px] xl:px-[150px]">
           <Contact />
-          <Footer />
         </div>
+        <Footer />
       </div>
     </Application>
   );

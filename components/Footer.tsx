@@ -28,7 +28,7 @@ export default function Footer() {
 
   return (
     <motion.div
-      className="w-[100%] h-[340px] md:h-[500px] relative pt-[80px] overflow-hidden md:rounded-[40px] rounded-[20px]"
+      className="w-[100%] h-[340px] md:h-[500px] relative pt-[80px] overflow-hidden md:rounded-[40px] rounded-[20px] px-[20px] md:px-[104px] xl:px-[150px]"
       initial="hidden"
       animate="visible"
     >

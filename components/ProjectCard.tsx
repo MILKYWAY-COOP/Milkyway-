@@ -1,8 +1,10 @@
-'use client';
-import Image from 'next/image';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef, useContext } from 'react';
-import { AppContext } from '@/context/index';
+"use client";
+import Image from "next/image";
+import Link from "next/link";
+import { HiOutlineExternalLink } from "react-icons/hi";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef, useContext } from "react";
+import { AppContext } from "@/context/index";
 
 export default function ProjectCard({
   project,
@@ -14,7 +16,7 @@ export default function ProjectCard({
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ['start end', 'start start'],
+    offset: ["start end", "start start"],
   });
 
   const cardScale = useTransform(progress, range, [1, target]);
@@ -23,7 +25,7 @@ export default function ProjectCard({
   const context = useContext(AppContext);
 
   if (!context) {
-    throw new Error('AppContext must be used within an Application');
+    throw new Error("AppContext must be used within an Application");
   }
 
   const { screen } = context;
@@ -38,20 +40,20 @@ export default function ProjectCard({
     >
       <motion.div
         className={`w-[100%] xl:h-[575px] rounded-[16px] md:rounded-[24px] xl:gap-[40px] ${
-          screen === 'xl' || screen === '2xl' ? 'p-[40px]' : ''
+          screen === "xl" || screen === "2xl" ? "p-[40px]" : ""
         }
         }]`}
         style={{
           scale: cardScale,
           backgroundColor: project.accent,
-          display: 'flex',
+          display: "flex",
           flexDirection:
             screen === `sm` || screen === `md` || screen === `lg`
-              ? 'column-reverse'
+              ? "column-reverse"
               : index % 2 === 0
               ? `row-reverse`
               : `row`,
-          overflow: 'hidden',
+          overflow: "hidden",
         }}
       >
         <div
@@ -69,7 +71,7 @@ export default function ProjectCard({
           <p className="text-greyB font-comfota md:text-[18px] text-[14px]">
             {project.description}
           </p>
-          <div className="flex flex-wrap mt-[40px] gap-[12px]">
+          <div className="flex flex-wrap mt-[40px] gap-[12px] items-center">
             {project.tags.map((tag: any, index: number) => (
               <span
                 key={index}
@@ -78,13 +80,20 @@ export default function ProjectCard({
                 {tag}
               </span>
             ))}
+            <Link href={project.link} target="_blank">
+              <span
+                className={` text-greyB pb-[6px] font-comfota text-[14px] self-center border-b`}
+              >
+                Visit <HiOutlineExternalLink className="inline" />
+              </span>
+            </Link>
           </div>
         </div>
         <div
           className={`xl:h-[435px] overflow-hidden relative ${
-            screen === 'sm' || screen === 'md' || screen === 'lg'
-              ? ''
-              : 'rounded-[20px]'
+            screen === "sm" || screen === "md" || screen === "lg"
+              ? ""
+              : "rounded-[20px]"
           }`}
           style={{
             width:

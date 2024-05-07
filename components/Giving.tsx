@@ -1,15 +1,16 @@
-import { motion } from 'framer-motion';
-import Image from 'next/image';
-import Cloud from '@/assets/clouds.png';
-import Sun from '@/assets/sun.png';
+import { motion } from "framer-motion";
+import Image from "next/image";
+import Link from "next/link";
+import Cloud from "@/assets/clouds.png";
+import Sun from "@/assets/sun.png";
 
 import FadeInWhenVisible, {
   FadeInLeftWhenVisible,
   FadeInRightWhenVisible,
-} from '@/utils/fadeInWhenVisible';
-import LeftDiagonalWhenVisible from '@/utils/leftDiagonalWhenVisible';
-import RightDiagonalWhenVisible from '@/utils/rightDiagonalWhenVisible';
-import SunAnimation from '@/utils/sunAnimation';
+} from "@/utils/fadeInWhenVisible";
+import LeftDiagonalWhenVisible from "@/utils/leftDiagonalWhenVisible";
+import RightDiagonalWhenVisible from "@/utils/rightDiagonalWhenVisible";
+import SunAnimation from "@/utils/sunAnimation";
 
 export default function Giving() {
   return (
@@ -39,7 +40,9 @@ export default function Giving() {
         </FadeInLeftWhenVisible>
       </motion.div>
       <FadeInRightWhenVisible className="lg:w-[50%] lg:h-[750px] h-[291px] relative">
-        <motion.div className="h-[100%] w-[100%] bg-koimbi bg-center bg-cover absolute top-0 left-0 right-0 bottom-0 z-[999]" />
+        <Link href="https://koimbi.web.app/" target="_blank">
+          <motion.div className="h-[100%] w-[100%] bg-koimbi bg-center bg-cover absolute top-0 left-0 right-0 bottom-0 z-[999]" />
+        </Link>
       </FadeInRightWhenVisible>
       <LeftDiagonalWhenVisible className="absolute top-[20px] lg:top-[90px] left-[20%] lg:left-[30%]">
         <Image
