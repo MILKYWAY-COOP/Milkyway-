@@ -1,47 +1,48 @@
-import { motion } from 'framer-motion';
-import { useState, useContext, useEffect } from 'react';
-import { AppContext } from '@/context/index';
+"use client";
+import { motion } from "framer-motion";
+import { useState, useContext, useEffect } from "react";
+import { AppContext } from "@/context/index";
 import {
   slideInFromLeft,
   slideInFromRight,
   slideBracketRight,
   slideBracketLeft,
-} from '@/utils/motion';
-import { IoClose } from 'react-icons/io5';
-import Github from '@/assets/github';
-import Linkedin from '@/assets/linkedin';
-import Stackoverflow from '@/assets/stackoverflow';
-import Upwork from '@/assets/upwork';
-import Link from 'next/link';
-import Logo from '@/assets/logo';
-import FadeInLeftWhenVisible from '@/utils/fadeInWhenVisible';
+} from "@/utils/motion";
+import { IoClose } from "react-icons/io5";
+import Github from "@/assets/github";
+import Linkedin from "@/assets/linkedin";
+import Stackoverflow from "@/assets/stackoverflow";
+import Upwork from "@/assets/upwork";
+import Link from "next/link";
+import Logo from "@/assets/logo";
+import FadeInLeftWhenVisible from "@/utils/fadeInWhenVisible";
 
 export default function Nav() {
   const [isHovered, setIsHovered] = useState<string | null>(null);
-  const navItems = ['Services', 'Giving Back', 'Work', 'Blog', 'Contact Us'];
+  const navItems = ["Services", "Giving Back", "Work", "Blog", "Contact Us"];
 
   const scrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId) as HTMLElement;
-    section.scrollIntoView({ behavior: 'smooth' });
+    section.scrollIntoView({ behavior: "smooth" });
   };
 
   const context = useContext(AppContext);
 
   if (!context) {
-    throw new Error('AppContext must be used within an Application');
+    throw new Error("AppContext must be used within an Application");
   }
 
   const { screen, isNavOpen, setIsNavOpen } = context;
 
   useEffect(() => {
-    const app = document.querySelector('.app');
+    const app = document.querySelector(".app");
     if (isNavOpen) {
-      app?.classList.add('app-no-overflow');
+      app?.classList.add("app-no-overflow");
     } else {
-      app?.classList.remove('app-no-overflow');
+      app?.classList.remove("app-no-overflow");
     }
     return () => {
-      app?.classList.remove('app-no-overflow');
+      app?.classList.remove("app-no-overflow");
     };
   }, [isNavOpen]);
 
@@ -53,14 +54,14 @@ export default function Nav() {
     >
       <motion.div
         className={`w-full flex-col font-comfota ${
-          screen === 'sm' ? 'hidden' : 'flex'
+          screen === "sm" ? "hidden" : "flex"
         }`}
       >
         <motion.div
           className={`border-b-[1px] flex gap-4 ${
-            screen === 'md'
-              ? 'text-[13px]  py-[16px]'
-              : 'text-[14px]  py-[18px]'
+            screen === "md"
+              ? "text-[13px]  py-[16px]"
+              : "text-[14px]  py-[18px]"
           }`}
         >
           <motion.p
@@ -76,7 +77,7 @@ export default function Nav() {
             <a
               href="https://wa.me/254799710693"
               target="_blank"
-              style={{ color: 'inherit', textDecoration: 'none' }}
+              style={{ color: "inherit", textDecoration: "none" }}
             >
               +254 799 710693
             </a>
@@ -84,15 +85,15 @@ export default function Nav() {
         </motion.div>
         <motion.div
           className={`w-full flex flex-row justify-between ${
-            screen === 'md'
-              ? 'py-[16px] text-[13px] '
-              : 'py-[30px] text-[18px] '
+            screen === "md"
+              ? "py-[16px] text-[13px] "
+              : "py-[30px] text-[18px] "
           } `}
         >
           <motion.div variants={slideInFromLeft(0.2)} className="">
             <Logo
-              width={screen === 'md' ? 40 : 60}
-              height={screen === 'md' ? 40 : 60}
+              width={screen === "md" ? 40 : 60}
+              height={screen === "md" ? 40 : 60}
             />
           </motion.div>
           <motion.ul className="flex gap-5">
@@ -107,16 +108,16 @@ export default function Nav() {
                 <motion.span
                   variants={slideBracketLeft}
                   initial="hidden"
-                  animate={isHovered === item ? 'hover' : 'hidden'}
+                  animate={isHovered === item ? "hover" : "hidden"}
                   className="absolute"
                 >
                   [
                 </motion.span>
                 <a
-                  id={item === 'Blog' ? 'Blog' : ''}
+                  id={item === "Blog" ? "Blog" : ""}
                   href={
-                    item === 'Blog'
-                      ? 'https://steveatmilkyway.blogspot.com/'
+                    item === "Blog"
+                      ? "https://steveatmilkyway.blogspot.com/"
                       : undefined
                   }
                   onClick={() => scrollToSection(`${item}`)}
@@ -128,7 +129,7 @@ export default function Nav() {
                 <motion.span
                   variants={slideBracketRight}
                   initial="hidden"
-                  animate={isHovered === item ? 'hover' : 'hidden'}
+                  animate={isHovered === item ? "hover" : "hidden"}
                   className="absolute"
                 >
                   ]
@@ -141,7 +142,7 @@ export default function Nav() {
 
       <motion.div
         className={`w-full flex justify-between align-center py-[30px] px-[28px] 
-           ${screen === 'sm' ? '' : 'hidden'}
+           ${screen === "sm" ? "" : "hidden"}
             `}
       >
         <motion.div variants={slideInFromLeft(0.2)} className="">
@@ -170,7 +171,7 @@ export default function Nav() {
       {isNavOpen && (
         <motion.div
           className={`w-full h-[100vh] flex-col gap-4 absolute transition-all duration-500 bg-stars z-9999 p-[28px] ${
-            isNavOpen ? 'mobileNav active' : 'mobileNav-hidden inactive'
+            isNavOpen ? "mobileNav active" : "mobileNav-hidden inactive"
           }`}
         >
           <motion.div className="w-full flex align-center justify-end">
@@ -191,7 +192,7 @@ export default function Nav() {
                   <motion.span
                     variants={slideBracketLeft}
                     initial="hidden"
-                    animate={isHovered === item ? 'hover' : 'hidden'}
+                    animate={isHovered === item ? "hover" : "hidden"}
                     className="absolute"
                   >
                     [
@@ -207,7 +208,7 @@ export default function Nav() {
                   <motion.span
                     variants={slideBracketRight}
                     initial="hidden"
-                    animate={isHovered === item ? 'hover' : 'hidden'}
+                    animate={isHovered === item ? "hover" : "hidden"}
                     className="absolute"
                   >
                     ]
@@ -242,7 +243,7 @@ export default function Nav() {
               <a
                 href="https://wa.me/254799710693"
                 target="_blank"
-                style={{ color: 'inherit', textDecoration: 'none' }}
+                style={{ color: "inherit", textDecoration: "none" }}
               >
                 +254 799 710693
               </a>

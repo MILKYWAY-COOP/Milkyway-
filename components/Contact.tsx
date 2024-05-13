@@ -80,7 +80,7 @@ export default function Contact() {
                 type="text"
                 name="from_name"
                 placeholder="Full Name"
-                className="w-[100%] p-[14px] rounded-[20px] bg-greyB text-black font-comfota"
+                className="w-[100%] p-[14px] rounded-[5px] bg-greyB text-black font-comfota"
                 onChange={formik.handleChange}
                 value={formik.values.from_name}
               />
@@ -90,14 +90,14 @@ export default function Contact() {
               type="email"
               name="email"
               placeholder="Email"
-              className="p-[14px] rounded-[20px] bg-greyB text-black font-comfota"
+              className="p-[14px] rounded-[5px] bg-greyB text-black font-comfota"
               onChange={formik.handleChange}
               value={formik.values.email}
             />
 
             <select
               name="service"
-              className="w-[100%] p-[14px] rounded-[20px] bg-greyB text-black font-comfota"
+              className="w-[100%] p-[14px] rounded-[5px] bg-greyB text-black font-comfota"
               onChange={formik.handleChange}
               value={formik.values.service}
             >
@@ -111,14 +111,14 @@ export default function Contact() {
             <textarea
               name="message"
               placeholder="Message"
-              className="p-[14px] rounded-[20px] bg-greyB text-black font-comfota"
+              className="p-[14px] rounded-[5px] bg-greyB text-black font-comfota"
               onChange={formik.handleChange}
               value={formik.values.message}
               rows={5}
             />
             <button
               type="submit"
-              className="border-[1px] border-contrast1 px-[32px] py-[12px] rounded-[22px] font-comfota text-white "
+              className="border-[1px] border-contrast1 px-[32px] py-[12px] rounded-[5px] font-comfota text-white "
               disabled={isLoading}
             >
               {isLoading ? 'Sending...' : 'Send'}
