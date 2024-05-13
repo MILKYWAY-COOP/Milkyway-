@@ -58,7 +58,7 @@ export default function Cards() {
           <FadeInWhenVisible key={index}>
             <motion.div
               layoutId={index.toString()}
-              className="w-[300px] md:w-[250px] h-[100%] xl:w-[400px] xl:h-[492px] rounded-[28px] border-[2px] border-contrast2 p-[20px] md:px-[40px] md:py-[32px] overflow-hidden relative flex flex-col gap-[28px]"
+              className="w-[300px] md:w-[250px] h-[100%] xl:w-[400px] xl:h-[492px] rounded-[10px] border-[2px] border-contrast2 p-[20px] md:px-[40px] md:py-[32px] overflow-hidden relative flex flex-col gap-[28px]"
             >
               <motion.div className="flex align-center gap-[16px]">
                 <category.icon width={48} height={48} />

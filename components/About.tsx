@@ -1,26 +1,26 @@
-import { motion } from 'framer-motion';
-import FadeInWhenVisible from '@/utils/fadeInWhenVisible';
+import { motion } from "framer-motion";
+import FadeInWhenVisible from "@/utils/fadeInWhenVisible";
 import {
   FadeInLeftWhenVisible,
   FadeInRightWhenVisible,
-} from '@/utils/fadeInWhenVisible';
-import TopRatedIcon from '@/assets/topRated';
-import SatisfactionIcon from '@/assets/satisfaction';
-import DiscountIcon from '@/assets/discount';
-import DownloadIcon from '@/assets/download';
-import { slideInFromLeft, slideInFromRight } from '@/utils/motion';
+} from "@/utils/fadeInWhenVisible";
+import TopRatedIcon from "@/assets/topRated";
+import SatisfactionIcon from "@/assets/satisfaction";
+import DiscountIcon from "@/assets/discount";
+import DownloadIcon from "@/assets/download";
+import { slideInFromLeft, slideInFromRight } from "@/utils/motion";
 
 const data = [
   {
-    text: 'Top Rated',
+    text: "Top Rated",
     icon: TopRatedIcon,
   },
   {
-    text: '100% Satisfaction',
+    text: "100% Satisfaction",
     icon: SatisfactionIcon,
   },
   {
-    text: 'Best Price & Quality',
+    text: "Best Price & Quality",
     icon: DiscountIcon,
   },
 ];
@@ -28,7 +28,7 @@ const data = [
 export default function About() {
   const scrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId) as HTMLElement;
-    section.scrollIntoView({ behavior: 'smooth' });
+    section.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -54,7 +54,7 @@ export default function About() {
             delivering exceptional and timely solutions that meet and exceed our
             clients&apos; expectations. Our approach combines a blend of
             expertise, innovation, and a deep understanding of the latest
-            technological trends to deliver unparalleled value.{' '}
+            technological trends to deliver unparalleled value.{" "}
           </motion.span>
         </FadeInLeftWhenVisible>
         <motion.div className="flex gap-[32px] mt-[32px]">
@@ -70,20 +70,20 @@ export default function About() {
           ))}
         </motion.div>
         <FadeInLeftWhenVisible delay={0.3}>
-          <motion.h1 className="text-[24px] text-white mt-[44px]">
+          {/* <motion.h1 className="text-[24px] text-white mt-[44px]">
             Stephen Muchendu - Founder
-          </motion.h1>
+          </motion.h1> */}
         </FadeInLeftWhenVisible>
         <motion.div className="mt-[40px] flex gap-[20px] md:flex-row flex-col">
           <motion.button
-            className="border-[1px] rounded-[24px] border-contrast1 px-[24px] py-[12px] text-white text-[18px] w-fit"
+            className="border-[1px] rounded-[5px] border-contrast1 px-[24px] py-[12px] text-white text-[18px] w-fit"
             variants={slideInFromLeft(0.3)}
             onClick={() => scrollToSection(`Contact Us`)}
           >
             Contact Us
           </motion.button>
           <motion.button
-            className="border-[1px] rounded-[24px] border-contrast1 px-[24px] py-[12px] text-white text-[18px] flex gap-[10px] w-fit"
+            className="border-[1px] rounded-[5px] border-contrast1 px-[24px] py-[12px] text-white text-[18px] flex gap-[10px] w-fit"
             variants={slideInFromLeft(0.3)}
           >
             <DownloadIcon width={24} height={24} />
@@ -98,7 +98,7 @@ export default function About() {
           muted
           className="w-[100%] aspect-video lg:w-[555px] lg:aspect-square rounded-[24px]"
           src="/blackhol.mp4"
-          style={{ objectFit: 'cover', objectPosition: 'center' }}
+          style={{ objectFit: "cover", objectPosition: "center" }}
         />
       </FadeInRightWhenVisible>
     </motion.div>
