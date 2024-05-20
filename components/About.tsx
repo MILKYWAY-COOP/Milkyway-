@@ -37,7 +37,7 @@ export default function About() {
       initial="hidden"
       animate="visible"
     >
-      <motion.div className="lg:max-w-[50%] pt-[40px]">
+      <motion.div className="lg:max-w-[50%] ">
         <FadeInWhenVisible>
           <motion.h1 className="text-white lg:text-[44px] mb-[24px] font-comfota text-[20px]">
             About Us
@@ -96,7 +96,7 @@ export default function About() {
           autoPlay
           loop
           muted
-          className="w-[100%] aspect-video lg:w-[555px] lg:aspect-square rounded-[24px]"
+          className="w-[100%] aspect-video lg:w-[555px] lg:aspect-square "
           src="/blackhol.mp4"
           style={{ objectFit: "cover", objectPosition: "center" }}
         />
