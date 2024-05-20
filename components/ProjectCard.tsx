@@ -39,7 +39,7 @@ export default function ProjectCard({
       }}
     >
       <motion.div
-        className={`w-[100%] xl:h-[575px] rounded-[16px] md:rounded-[24px] xl:gap-[40px] ${
+        className={`w-[100%] xl:h-[575px] rounded-[5px] md:rounded-[5px] xl:gap-[40px] ${
           screen === "xl" || screen === "2xl" ? "p-[40px]" : ""
         }
         }]`}
