@@ -1,17 +1,17 @@
-import { useState, useRef, useContext } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { categories } from '@/data/data';
-import { IoClose } from 'react-icons/io5';
-import { TiTick } from 'react-icons/ti';
-import FadeInWhenVisible from '@/utils/fadeInWhenVisible';
-import { slideInFromLeft } from '@/utils/motion';
-import { AppContext } from '@/context/index';
+import { useState, useRef, useContext } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { categories } from "@/data/data";
+import { IoClose } from "react-icons/io5";
+import { TiTick } from "react-icons/ti";
+import FadeInWhenVisible from "@/utils/fadeInWhenVisible";
+import { slideInFromLeft } from "@/utils/motion";
+import { AppContext } from "@/context/index";
 
 export default function Cards() {
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [isHovered, setIsHovered] = useState<boolean>(false);
 
-  const IconComponent = categories[parseInt(selectedId || '1')].icon;
+  const IconComponent = categories[parseInt(selectedId || "1")].icon;
 
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -24,14 +24,14 @@ export default function Cards() {
   const context = useContext(AppContext);
 
   if (!context) {
-    throw new Error('AppContext must be used within an Application');
+    throw new Error("AppContext must be used within an Application");
   }
 
   const { screen } = context;
 
   return (
     <div
-      className="flex flex-col w-[100%] align-center justify-center rounded-[20px] relative overflow-hidden"
+      className="flex flex-col w-full align-center justify-center rounded-[20px] relative overflow-hidden"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => {
         setIsHovered(false);
@@ -55,63 +55,62 @@ export default function Cards() {
         ref={containerRef}
       >
         {categories.map((category, index) => (
-          <FadeInWhenVisible key={index}>
-            <motion.div
-              layoutId={index.toString()}
-              className="w-[300px] md:w-[250px] h-[100%] xl:w-[400px] xl:h-[492px] rounded-[10px] border-[2px] border-contrast2 p-[20px] md:px-[40px] md:py-[32px] overflow-hidden relative flex flex-col gap-[28px]"
-            >
-              <motion.div className="flex align-center gap-[16px]">
-                <category.icon width={48} height={48} />
-                <motion.h2 className="text-white text-[18px] xl:text-[24px] font-comfota">
-                  {category.name}
-                </motion.h2>
-              </motion.div>
-              <motion.ul className="flex flex-col gap-[12px] xl:gap-[16px]">
-                {category.technologies.slice(0, 8).map((tech, techIndex) => (
-                  <motion.li
-                    key={techIndex}
-                    className={`
-                    ${screen === 'sm' ? 'hidden' : 'block'}
-                  `}
-                  >
-                    <TiTick className="inline-block mr-2" fill="#FFCC00" />
-                    <motion.span className="text-greyB text-[14px] xl:text-[20px] font-comfota">
-                      {tech}
-                    </motion.span>
-                  </motion.li>
-                ))}
-                {category.technologies.map((tech, techIndex) => (
-                  <motion.li
-                    key={techIndex}
-                    className={`
-                    ${screen === 'sm' ? 'block' : 'hidden'}
-                  `}
-                    variants={slideInFromLeft(0.15 * techIndex)}
-                  >
-                    <TiTick className="inline-block mr-2" fill="#FFCC00" />
-                    <motion.span className="text-greyB text-[14px] xl:text-[20px] font-comfota">
-                      {tech}
-                    </motion.span>
-                  </motion.li>
-                ))}
-                {category.technologies.length > 9 && (
-                  <motion.li>
-                    <motion.button
-                      className={`bg-contrast1 w-auto p-1 rounded absolute bottom-0 right-0 text-comfota cursor-pointer text-[14px] xl:text-[20px]
-                      ${screen === 'sm' ? 'hidden' : 'block'}
-                      `}
-                      onClick={() => {
-                        selectedId === null
-                          ? setSelectedId(index.toString())
-                          : setSelectedId(null);
-                      }}
-                    >
-                      Expand
-                    </motion.button>
-                  </motion.li>
-                )}
-              </motion.ul>
+          <FadeInWhenVisible
+            key={index}
+            className="w-full md:w-[300px] h-auto xl:w-[400px] xl:h-[492px] rounded-[10px] border-[2px] border-contrast2 p-[20px] md:px-[40px] md:py-[32px] overflow-hidden relative flex flex-col gap-[28px]"
+            layoutId={index.toString()}
+          >
+            <motion.div className="flex align-center gap-[16px]">
+              <category.icon width={48} height={48} />
+              <motion.h2 className="text-white text-[18px] xl:text-[24px] font-comfota">
+                {category.name}
+              </motion.h2>
             </motion.div>
+            <motion.ul className="flex flex-col gap-[12px] xl:gap-[16px]">
+              {category.technologies.slice(0, 8).map((tech, techIndex) => (
+                <motion.li
+                  key={techIndex}
+                  className={`
+                    ${screen === "sm" ? "hidden" : "block"}
+                  `}
+                >
+                  <TiTick className="inline-block mr-2" fill="#FFCC00" />
+                  <motion.span className="text-greyB text-[14px] xl:text-[20px] font-comfota">
+                    {tech}
+                  </motion.span>
+                </motion.li>
+              ))}
+              {category.technologies.map((tech, techIndex) => (
+                <motion.li
+                  key={techIndex}
+                  className={`
+                    ${screen === "sm" ? "block" : "hidden"}
+                  `}
+                  variants={slideInFromLeft(0.15 * techIndex)}
+                >
+                  <TiTick className="inline-block mr-2" fill="#FFCC00" />
+                  <motion.span className="text-greyB text-[14px] xl:text-[20px] font-comfota">
+                    {tech}
+                  </motion.span>
+                </motion.li>
+              ))}
+              {category.technologies.length > 9 && (
+                <motion.li>
+                  <motion.button
+                    className={`bg-contrast1 w-auto p-1 rounded absolute bottom-0 right-0 text-comfota cursor-pointer text-[14px] xl:text-[20px]
+                      ${screen === "sm" ? "hidden" : "block"}
+                      `}
+                    onClick={() => {
+                      selectedId === null
+                        ? setSelectedId(index.toString())
+                        : setSelectedId(null);
+                    }}
+                  >
+                    Expand
+                  </motion.button>
+                </motion.li>
+              )}
+            </motion.ul>
           </FadeInWhenVisible>
         ))}
 
@@ -123,13 +122,11 @@ export default function Cards() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               className={`absolute z-30 md:min-w-[400px] bg-stars overflow-hidden t-${scrollY()} md:t-[20%] md:l-[40%] md:translate-x-[-20%] md:translate-y-[-40%]`}
-              style={
-                {
-                  // top: '20%',
-                  // left: '40%',
-                  // transform: 'translate(-20%, -40%)',
-                }
-              }
+              style={{
+                top: "20%",
+                left: "40%",
+                transform: "translate(-20%, -40%)",
+              }}
             >
               <motion.div className="animate-bg inset-0 rounded-lg p-4">
                 <motion.div className="w-full flex justify-end">
@@ -148,7 +145,7 @@ export default function Cards() {
                 >
                   <motion.div className="flex align-center gap-[16px]">
                     <IconComponent width={48} height={48} fill="#fff" />
-                    <motion.h2 className="text-white text-[18px] lg:text-[24px]">
+                    <motion.h2 className="text-white text-[16px] lg:text-[18px]">
                       {categories[parseInt(selectedId)].name}
                     </motion.h2>
                   </motion.div>
@@ -159,7 +156,7 @@ export default function Cards() {
                         variants={slideInFromLeft(0.15 * techIndex)}
                       >
                         <TiTick className="inline-block mr-2" fill="#FFCC00" />
-                        <motion.span className="text-white text-[16px] lg:text-[20px] ">
+                        <motion.span className="text-white text-[13px] lg:text-[14px] ">
                           {tech}
                         </motion.span>
                       </motion.li>
