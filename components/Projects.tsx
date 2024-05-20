@@ -10,7 +10,7 @@ export default function Projects() {
 
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ['start start', 'end end'],
+    offset: ['start start', 'end end'], 
   });
 
   useEffect(() => {
