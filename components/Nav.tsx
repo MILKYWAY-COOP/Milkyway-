@@ -170,7 +170,7 @@ export default function Nav() {
 
       {isNavOpen && (
         <motion.div
-          className={`w-full h-[100vh] flex-col gap-4 absolute transition-all duration-500 bg-stars z-9999 p-[28px] ${
+          className={`w-full h-[100vh] flex-col justify-evenly absolute transition-all duration-500 bg-stars z-9999 p-[28px] ${
             isNavOpen ? "mobileNav active" : "mobileNav-hidden inactive"
           }`}
         >
@@ -182,11 +182,12 @@ export default function Nav() {
               <IoClose size={30} />
             </motion.button>
           </motion.div>
+
           <motion.ul className="w-full flex flex-col justify-center ">
             {navItems.map((item, index) => (
               <FadeInLeftWhenVisible delay={0.2 * index} key={item}>
                 <motion.li
-                  className="text-white cursor-pointer text-[26px] py-[33px] text-center"
+                  className="text-white cursor-pointer text-[26px] py-[24px] text-center"
                   // variants={slideInFromLeft(0.2 * index)}
                 >
                   <motion.span
