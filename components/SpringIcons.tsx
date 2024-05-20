@@ -1,8 +1,8 @@
-import * as React from 'react';
-import { useState, useContext } from 'react';
-import { AppContext } from '@/context/index';
-import Image from 'next/image';
-import { motion, useMotionValue, useSpring } from 'framer-motion';
+import * as React from "react";
+import { useState, useContext } from "react";
+import { AppContext } from "@/context/index";
+import Image from "next/image";
+import { motion, useMotionValue, useSpring } from "framer-motion";
 import {
   SiJavascript,
   SiFirebase,
@@ -17,11 +17,11 @@ import {
   SiTailwindcss,
   SiMysql,
   SiStripe,
-} from 'react-icons/si';
-import { FaNode, FaVuejs, FaAws } from 'react-icons/fa';
-import { TbBrandNextjs, TbBrandReactNative } from 'react-icons/tb';
-import { distance } from '@popmotion/popcorn';
-import NIcon from '@/assets/nextjs.svg';
+} from "react-icons/si";
+import { FaNode, FaVuejs, FaAws } from "react-icons/fa";
+import { TbBrandNextjs, TbBrandReactNative } from "react-icons/tb";
+import { distance } from "@popmotion/popcorn";
+import NIcon from "@/assets/nextjs.svg";
 
 const Square = ({
   active,
@@ -48,7 +48,7 @@ const Square = ({
   const context = useContext(AppContext);
 
   if (!context) {
-    throw new Error('AppContext must be used within an Application');
+    throw new Error("AppContext must be used within an Application");
   }
 
   const { isNavOpen, screen } = context;
@@ -58,7 +58,7 @@ const Square = ({
   }
 
   const size =
-    screen === 'sm' ? 40 : screen === 'md' ? 45 : screen === 'lg' ? 50 : 55;
+    screen === "sm" ? 40 : screen === "md" ? 45 : screen === "lg" ? 50 : 55;
   const gap = 5;
 
   const left =
@@ -76,20 +76,20 @@ const Square = ({
         height: size,
         top: rowIndex * (size + gap),
         left: left,
-        position: 'absolute',
+        position: "absolute",
         x: isDragging ? x : dx,
         y: isDragging ? y : dy,
         zIndex: isDragging ? 1 : 0,
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        padding: '10px',
-        background: 'rgba(255, 255, 255, 0.1)',
-        backdropFilter: 'blur(5px)',
-        borderRadius: '5%',
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        padding: "10px",
+        background: "rgba(255, 255, 255, 0.1)",
+        backdropFilter: "blur(5px)",
+        borderRadius: "5%",
       }}
     >
-      {typeof Icon === 'function' ? (
+      {typeof Icon === "function" ? (
         <Icon
           style={{
             fill: `#FFF`,
@@ -100,7 +100,7 @@ const Square = ({
         <Image
           src={Icon}
           alt="Next.js Logo"
-          style={{ width: '70px', height: '70px', fill: '#FFF' }}
+          style={{ width: "70px", height: "70px", fill: "#FFF" }}
         />
       )}
     </motion.div>
@@ -124,15 +124,16 @@ export default function SpringIcons() {
   const context = useContext(AppContext);
 
   if (!context) {
-    throw new Error('AppContext must be used within an Application');
+    throw new Error("AppContext must be used within an Application");
   }
 
   const { isNavOpen, screen } = context;
 
   if (isNavOpen) {
-    return null;
+    return <div />;
   }
-  const size = screen === 'sm' ? 40 : screen === 'md' ? 45 : 80;
+
+  const size = screen === "sm" ? 40 : screen === "md" ? 45 : 80;
   const gap = 5;
 
   const gridWidth = gridIcons[gridIcons.length - 1].length;
@@ -141,32 +142,32 @@ export default function SpringIcons() {
     <motion.div
       animate={{ scale: 1.2 }}
       transition={{
-        type: 'spring',
+        type: "spring",
         damping: 2,
         stiffness: 50,
         restDelta: 0.001,
         duration: 10,
         loop: Infinity,
-        ease: 'linear',
+        ease: "linear",
       }}
       style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        position: 'relative',
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        position: "relative",
         width: (size + gap) * 4 - gap,
         height: (size + gap) * 4 - gap,
-        top: '30%',
+        top: "30%",
         left: `${
-          screen === 'sm'
-            ? '-15%'
-            : screen === 'md'
-            ? '-10%'
-            : screen === 'lg'
-            ? '-5%'
-            : '20%'
+          screen === "sm"
+            ? "-15%"
+            : screen === "md"
+            ? "-10%"
+            : screen === "lg"
+            ? "-5%"
+            : "20%"
         }`,
-        transform: 'translate(30%, -30%)',
+        transform: "translate(30%, -30%)",
         perspective: 500,
       }}
     >
