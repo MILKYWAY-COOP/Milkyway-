@@ -62,11 +62,11 @@ export default function Contact() {
       animate="visible"
     >
       <FadeInWhenVisible>
-        <h2 className="text-white text-[20px] lg:text-[44px] mb-[24px] font-comfota text-center">
+        <h2 className="text-white text-[26px] lg:text-[44px] mb-[24px] font-comfota text-center">
           Connect with us
         </h2>
       </FadeInWhenVisible>
-      <div className="flex gap-[50px] w-full md:flex-row flex-col">
+      <div className="flex gap-[50px] w-full lg:flex-row flex-col">
         <FadeInLeftWhenVisible className="flex justify-center align-center lg:w-[50%]">
           <Image src={Earth} alt="earth" className="hover:rotate-180" />
         </FadeInLeftWhenVisible>
