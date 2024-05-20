@@ -1,9 +1,9 @@
-import { useContext, useEffect } from 'react';
-import { AppContext } from '@/context/index';
-import Nav from '@/components/Nav';
-import SpringIcons from '@/components/SpringIcons';
-import { motion } from 'framer-motion';
-import { slideInFromLeft } from '@/utils/motion';
+import { useContext, useEffect } from "react";
+import { AppContext } from "@/context/index";
+import Nav from "@/components/Nav";
+import SpringIcons from "@/components/SpringIcons";
+import { motion } from "framer-motion";
+import { slideInFromLeft } from "@/utils/motion";
 
 export default function Hero() {
   const delayValue = 0.5;
@@ -11,7 +11,7 @@ export default function Hero() {
   const context = useContext(AppContext);
 
   if (!context) {
-    throw new Error('AppContext must be used within an Application');
+    throw new Error("AppContext must be used within an Application");
   }
 
   const { changeBg, bg, screen } = context;
@@ -23,17 +23,17 @@ export default function Hero() {
   return (
     <div
       className={`w-[100vw] h-[100vh] flex min-h-screen flex-col items-start relative ${
-        bg === 'custom-bg1'
-          ? 'bg-custom-bg1'
-          : bg === 'custom-bg2'
-          ? 'bg-custom-bg2'
-          : bg === 'custom-bg3'
-          ? 'bg-custom-bg3'
-          : bg === 'custom-bg4'
-          ? 'bg-custom-bg4'
-          : bg === 'custom-bg5'
-          ? 'bg-custom-bg5'
-          : ''
+        bg === "custom-bg1"
+          ? "bg-custom-bg1"
+          : bg === "custom-bg2"
+          ? "bg-custom-bg2"
+          : bg === "custom-bg3"
+          ? "bg-custom-bg3"
+          : bg === "custom-bg4"
+          ? "bg-custom-bg4"
+          : bg === "custom-bg5"
+          ? "bg-custom-bg5"
+          : ""
       } lg:px-[80px] md:px-[60px] sm:px-[20px] bg-cover bg-center overflow-hidden`}
     >
       <Nav />
