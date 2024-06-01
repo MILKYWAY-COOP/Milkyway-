@@ -22,7 +22,7 @@ export default function Hero() {
 
   return (
     <div
-      className={`w-[100vw] h-[100vh] flex min-h-screen flex-col items-start relative ${
+      className={`w-[100vw] h-[100vh] flex justify-center ${
         bg === "custom-bg1"
           ? "bg-custom-bg1"
           : bg === "custom-bg2"
@@ -34,19 +34,22 @@ export default function Hero() {
           : bg === "custom-bg5"
           ? "bg-custom-bg5"
           : ""
-      } lg:px-[80px] md:px-[60px] sm:px-[20px] bg-cover bg-center overflow-hidden`}
+      } bg-cover bg-center overflow-hidden`}
     >
-      <Nav />
-      <div className="w-[100vw] h-full flex flex-col items-center overflow-hidden gap-[60px]">
-        <motion.div variants={slideInFromLeft(delayValue)}>
-          <p className="text-white font-comfota md:text-[50px] sm:text-[40px] text-[40px] text-center">
-            MilkyWay Cooperation
-          </p>
-          <p className="text-white font-comfota md:text-[30px] sm:text-[30px] text-[16px] text-center">
-            Tech is our business and business is good
-          </p>
-        </motion.div>
-        <div className="w-[20%]">
+      <div className="sm:w-[640px] md:w-[768px] lg:w-[1280px] flex flex-col items-start relative">
+        <Nav />
+        <div className="w-[100%] h-full flex flex-col items-center overflow-hidden gap-[60px] mt-[30%] md:mt-[10%]">
+          <motion.div
+            variants={slideInFromLeft(delayValue)}
+            className="w-full text-center"
+          >
+            <p className="w-full text-white font-comfota md:text-[50px] sm:text-[40px] text-[40px] text-center">
+              MilkyWay Cooperation
+            </p>
+            <p className="w-full text-white font-comfota md:text-[30px] sm:text-[30px] text-[16px] text-center">
+              Tech is our business and business is good
+            </p>
+          </motion.div>
           <SpringIcons />
         </div>
       </div>
