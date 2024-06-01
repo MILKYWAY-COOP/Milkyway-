@@ -1,34 +1,34 @@
-import Earth from '@/assets/earth.png';
-import Image from 'next/image';
-import emailjs from '@emailjs/browser';
-import { motion } from 'framer-motion';
-import toast, { Toaster } from 'react-hot-toast';
-import { useFormik } from 'formik';
-import * as Yup from 'yup';
-import { useState } from 'react';
-import FadeInWhenVisible from '@/utils/fadeInWhenVisible';
+import Earth from "@/assets/earth.png";
+import Image from "next/image";
+import emailjs from "@emailjs/browser";
+import { motion } from "framer-motion";
+import toast, { Toaster } from "react-hot-toast";
+import { useFormik } from "formik";
+import * as Yup from "yup";
+import { useState } from "react";
+import FadeInWhenVisible from "@/utils/fadeInWhenVisible";
 import {
   FadeInRightWhenVisible,
   FadeInLeftWhenVisible,
-} from '@/utils/fadeInWhenVisible';
+} from "@/utils/fadeInWhenVisible";
 
 export default function Contact() {
   const [isLoading, setIsLoading] = useState(false);
 
   const formik = useFormik({
     initialValues: {
-      from_name: '',
-      email: '',
-      service: '',
-      message: '',
+      from_name: "",
+      email: "",
+      service: "",
+      message: "",
     },
     validationSchema: Yup.object({
-      from_name: Yup.string().required('*Name is required'),
+      from_name: Yup.string().required("*Name is required"),
       email: Yup.string()
-        .email('*Invalid email address')
-        .required('*Email is required'),
-      service: Yup.string().required('*Service selection is required'),
-      message: Yup.string().required('*Message is required'),
+        .email("*Invalid email address")
+        .required("*Email is required"),
+      service: Yup.string().required("*Service selection is required"),
+      message: Yup.string().required("*Message is required"),
     }),
 
     onSubmit: (values, { resetForm }) => {
@@ -37,19 +37,19 @@ export default function Contact() {
       setIsLoading(true);
       emailjs
         .send(
-          'service_4uu6p5n',
-          'template_eqfpl7p',
+          "service_4uu6p5n",
+          "template_eqfpl7p",
           values,
-          'MwuuGyU2QPzSfKX6d'
+          "MwuuGyU2QPzSfKX6d"
         )
         .then((res) => {
           setIsLoading(false);
-          toast.success('Email sent successfully!');
+          toast.success("Email sent successfully!");
           resetForm();
         })
         .catch((err) => {
           setIsLoading(false);
-          toast.error('Error sending email!');
+          toast.error("Error sending email!");
         });
     },
   });
@@ -66,11 +66,11 @@ export default function Contact() {
           Connect with us
         </h2>
       </FadeInWhenVisible>
-      <div className="flex gap-[50px] w-full lg:flex-row flex-col">
+      <div className="flex justify-between items-center w-full lg:flex-row flex-col">
         <FadeInLeftWhenVisible className="flex justify-center align-center lg:w-[50%]">
           <Image src={Earth} alt="earth" className="hover:rotate-180" />
         </FadeInLeftWhenVisible>
-        <FadeInRightWhenVisible className="h-full lg:w-[50%]">
+        <FadeInRightWhenVisible className="h-full lg:w-[50%] w-[100%]">
           <form
             onSubmit={formik.handleSubmit}
             className="flex flex-col  gap-[20px] justify-center align-center"
@@ -121,7 +121,7 @@ export default function Contact() {
               className="border-[1px] border-contrast1 px-[32px] py-[12px] rounded-[5px] font-comfota text-white "
               disabled={isLoading}
             >
-              {isLoading ? 'Sending...' : 'Send'}
+              {isLoading ? "Sending..." : "Send"}
             </button>
           </form>
         </FadeInRightWhenVisible>
