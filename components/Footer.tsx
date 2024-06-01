@@ -1,25 +1,25 @@
-import Image from 'next/image';
-import { useContext, useEffect } from 'react';
-import { AppContext } from '@/context/index';
-import Logo from '@/assets/logo';
-import Github from '@/assets/github';
-import Linkedin from '@/assets/linkedin';
-import Stackoverflow from '@/assets/stackoverflow';
-import Upwork from '@/assets/upwork';
-import Link from 'next/link';
-import { motion } from 'framer-motion';
+import Image from "next/image";
+import { useContext, useEffect } from "react";
+import { AppContext } from "@/context/index";
+import Logo from "@/assets/logo";
+import Github from "@/assets/github";
+import Linkedin from "@/assets/linkedin";
+import Stackoverflow from "@/assets/stackoverflow";
+import Upwork from "@/assets/upwork";
+import Link from "next/link";
+import { motion } from "framer-motion";
 import FadeInWhenVisible, {
   FadeInLeftWhenVisible,
   FadeInRightWhenVisible,
-} from '@/utils/fadeInWhenVisible';
+} from "@/utils/fadeInWhenVisible";
 
 export default function Footer() {
   const context = useContext(AppContext);
 
-  const navItems = ['Services', 'Giving Back', 'Work', 'Blog', 'Contact Us'];
+  const navItems = ["Services", "Giving Back", "Work", "Blog", "Contact Us"];
 
   if (!context) {
-    throw new Error('AppContext must be used within an Application');
+    throw new Error("AppContext must be used within an Application");
   }
 
   const { bg, screen } = context;
@@ -28,29 +28,30 @@ export default function Footer() {
 
   return (
     <motion.div
-      className="w-[100%] h-[340px] md:h-[500px] relative pt-[80px] overflow-hidden md:rounded-[40px] rounded-[20px] px-[20px] md:px-[104px] xl:px-[150px]"
+      className={`w-[100vw] h-[340px] md:h-[500px] relative overflow-hidden px-[20px]
+      ${
+        bg === "custom-bg1"
+          ? "bg-custom-bg1"
+          : bg === "custom-bg2"
+          ? "bg-custom-bg2"
+          : bg === "custom-bg3"
+          ? "bg-custom-bg3"
+          : bg === "custom-bg4"
+          ? "bg-custom-bg4"
+          : bg === "custom-bg5"
+          ? "bg-custom-bg5"
+          : ""
+      } flex items-center justify-center`}
       initial="hidden"
       animate="visible"
     >
       <div
-        className={`${
-          bg === 'custom-bg1'
-            ? 'bg-custom-bg1'
-            : bg === 'custom-bg2'
-            ? 'bg-custom-bg2'
-            : bg === 'custom-bg3'
-            ? 'bg-custom-bg3'
-            : bg === 'custom-bg4'
-            ? 'bg-custom-bg4'
-            : bg === 'custom-bg5'
-            ? 'bg-custom-bg5'
-            : ''
-        } w-full h-full bg-cover bg-center absolute inset-0 flex align-start md:flex-row flex-col gap-[0px] `}
+        className={`sm:w-[640px] md:w-[768px] lg:w-[1280px] h-full bg-cover bg-center flex align-start md:flex-row flex-col gap-[0px] self-center pt-[20px]`}
       >
         <FadeInWhenVisible className="md:w-[40%] flex flex-col lg:gap-[24px] align-center p-[10px] md:p-[40px]">
           <Logo
-            width={screen === 'sm' ? 80 : 120}
-            height={screen === 'sm' ? 80 : 120}
+            width={screen === "sm" ? 80 : 120}
+            height={screen === "sm" ? 80 : 120}
           />
           <p className="text-grey text-[16px] font-comfota">
             © {date} MilkyWay. All rights reserved.
@@ -81,16 +82,16 @@ export default function Footer() {
                 target="_blank"
               >
                 <Upwork
-                  width={screen === 'sm' ? 30 : 50}
-                  height={screen === 'sm' ? 30 : 50}
+                  width={screen === "sm" ? 30 : 50}
+                  height={screen === "sm" ? 30 : 50}
                 />
               </Link>
             </FadeInRightWhenVisible>
             <FadeInRightWhenVisible delay={0.4}>
               <Link href="https://github.com/steeeved" target="_blank">
                 <Github
-                  width={screen === 'sm' ? 30 : 50}
-                  height={screen === 'sm' ? 30 : 50}
+                  width={screen === "sm" ? 30 : 50}
+                  height={screen === "sm" ? 30 : 50}
                 />
               </Link>
             </FadeInRightWhenVisible>
@@ -100,8 +101,8 @@ export default function Footer() {
                 target="_blank"
               >
                 <Linkedin
-                  width={screen === 'sm' ? 30 : 50}
-                  height={screen === 'sm' ? 30 : 50}
+                  width={screen === "sm" ? 30 : 50}
+                  height={screen === "sm" ? 30 : 50}
                 />
               </Link>
             </FadeInRightWhenVisible>
@@ -111,8 +112,8 @@ export default function Footer() {
                 target="_blank"
               >
                 <Stackoverflow
-                  width={screen === 'sm' ? 30 : 50}
-                  height={screen === 'sm' ? 30 : 50}
+                  width={screen === "sm" ? 30 : 50}
+                  height={screen === "sm" ? 30 : 50}
                 />
               </Link>
             </FadeInRightWhenVisible>
