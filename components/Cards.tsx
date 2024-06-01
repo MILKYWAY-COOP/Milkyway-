@@ -57,7 +57,7 @@ export default function Cards() {
         {categories.map((category, index) => (
           <FadeInWhenVisible
             key={index}
-            className="w-full md:w-[300px] h-auto xl:w-[400px] xl:h-[492px] rounded-[10px] border-[2px] border-contrast2 p-[20px] md:px-[40px] md:py-[32px] overflow-hidden relative flex flex-col gap-[28px]"
+            className="w-full md:w-[300px] h-auto rounded-[10px] border-[2px] border-contrast2 p-[20px] md:px-[40px] md:py-[32px] overflow-hidden relative flex flex-col gap-[28px]"
             layoutId={index.toString()}
           >
             <motion.div className="flex align-center gap-[16px]">
