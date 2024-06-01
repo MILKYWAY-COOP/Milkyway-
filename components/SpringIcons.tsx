@@ -113,12 +113,11 @@ export default function SpringIcons() {
   const y = useMotionValue(0);
 
   const gridIcons = [
-    [SiJavascript],
-    [FaNode, SiTypescript],
-    [SiPrisma, SiStripe, SiReact],
-    [NIcon, TbBrandReactNative, SiNestjs, FaVuejs],
-    [SiPostgresql, SiMysql, SiMongodb, SiFirebase, FaAws],
-    [SiGooglecloud, SiTailwindcss, SiStrapi],
+    [SiJavascript, FaNode, SiTypescript, SiPrisma],
+    [SiStripe, SiReact, NIcon, TbBrandReactNative],
+    [SiNestjs, FaVuejs, SiPostgresql, SiMysql],
+    [SiMongodb, SiFirebase, FaAws, SiGooglecloud],
+    [SiTailwindcss, SiStrapi, TbBrandNextjs],
   ];
 
   const context = useContext(AppContext);
@@ -135,7 +134,6 @@ export default function SpringIcons() {
 
   const size = screen === "sm" ? 40 : screen === "md" ? 45 : 80;
   const gap = 5;
-
   const gridWidth = gridIcons[gridIcons.length - 1].length;
 
   return (
@@ -157,16 +155,16 @@ export default function SpringIcons() {
         position: "relative",
         width: (size + gap) * 4 - gap,
         height: (size + gap) * 4 - gap,
-        top: "30%",
-        left: `${
-          screen === "sm"
-            ? "-15%"
-            : screen === "md"
-            ? "-10%"
-            : screen === "lg"
-            ? "-5%"
-            : "20%"
-        }`,
+        // top: "30%",
+        // left: `${
+        //   screen === "sm"
+        //     ? "-15%"
+        //     : screen === "md"
+        //     ? "-10%"
+        //     : screen === "lg"
+        //     ? "-5%"
+        //     : "20%"
+        // }`,
         transform: "translate(30%, -30%)",
         perspective: 500,
       }}

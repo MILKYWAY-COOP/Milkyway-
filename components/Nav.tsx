@@ -48,7 +48,7 @@ export default function Nav() {
 
   return (
     <motion.div
-      className="w-full flex flex-col font-comfota"
+      className="w-full flex flex-col font-comfota px-[20px]"
       initial="hidden"
       animate="visible"
     >
@@ -65,7 +65,7 @@ export default function Nav() {
           }`}
         >
           <motion.p
-            className={`text-white  pr-4 bo'rder-r-[1px] font-comfota`}
+            className={`text-white  pr-4 border-r-[1px] font-comfota`}
             variants={slideInFromLeft(0.1)}
           >
             Need help ? Talk to an expert
@@ -141,7 +141,7 @@ export default function Nav() {
       </motion.div>
 
       <motion.div
-        className={`w-full flex justify-between align-center py-[30px] px-[28px] 
+        className={`w-full flex justify-between align-center py-[30px] 
            ${screen === "sm" ? "" : "hidden"}
             `}
       >

@@ -12,25 +12,27 @@ import "./globals.css";
 export default function Page() {
   return (
     <Application>
-      <div
-        className={`w-full flex flex-col items-start justify-center relative bg-stars gap-[60px] lg:gap-[160px] app`}
-      >
-        <Hero />
-        <div className="flex flex-col md:gap-[80px] gap-[60px] lg:gap-[100px] px-[20px] md:px-[104px] xl:px-[150px]">
-          <Cards />
-          <About />
-        </div>
-        <Giving />
+      <div className="w-[100vw] bg-stars flex flex-col items-center justify-center">
         <div
-          className="flex flex-col xl:gap-[80px] gap-[60px] lg:gap-[100px] px-[20px] md:px-[104px] xl:px-[150px]"
-          id="Work"
+          className={`w-full flex flex-col items-start justify-center relative  gap-[60px] lg:gap-[160px] app`}
         >
-          <Projects />
+          <Hero />
+          <div
+            className="sm:w-[640px] md:w-[768px] lg:w-[1280px] flex flex-col justify-center xl:gap-[80px] gap-[60px] lg:gap-[100px] px-[20px] self-center"
+            id="Work"
+          >
+            <Projects />
+          </div>
+          <div className="sm:w-[640px] md:w-[768px] lg:w-[1280px] flex flex-col items-center md:gap-[80px] gap-[60px] lg:gap-[100px] px-[20px] self-center">
+            <Cards />
+            <About />
+          </div>
+          <Giving />
+          <div className="sm:w-[640px] md:w-[768px] lg:w-[1280px] flex flex-col xl:gap-[80px] gap-[60px] lg:gap-[100px] px-[20px] self-center">
+            <Contact />
+          </div>
+          <Footer />
         </div>
-        <div className="w-full flex flex-col xl:gap-[80px] gap-[60px] lg:gap-[100px] px-[20px] md:px-[104px] xl:px-[150px]">
-          <Contact />
-        </div>
-        <Footer />
       </div>
     </Application>
   );
