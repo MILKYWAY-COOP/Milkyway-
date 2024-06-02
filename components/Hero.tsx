@@ -38,7 +38,7 @@ export default function Hero() {
     >
       <div className="sm:w-[640px] md:w-[768px] lg:w-[1280px] flex flex-col items-start relative">
         <Nav />
-        <div className="w-[100%] h-full flex flex-col items-center overflow-hidden gap-[60px] mt-[30%] md:mt-[10%]">
+        <div className="w-[100%] h-full flex flex-col items-center justify-start  gap-[60px]">
           <motion.div
             variants={slideInFromLeft(delayValue)}
             className="w-full text-center"
