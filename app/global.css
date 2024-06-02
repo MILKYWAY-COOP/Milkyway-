@@ -100,9 +100,9 @@ body::-webkit-scrollbar-thumb {
 }
 
 @media screen and (max-width: 640px) {
-  .app {
+  /* .app {
     overflow-x: hidden;
-  }
+  } */
 }
 
 /* .app-no-overflow {
