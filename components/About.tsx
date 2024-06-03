@@ -74,7 +74,7 @@ export default function About() {
             Stephen Muchendu - Founder
           </motion.h1> */}
         </FadeInLeftWhenVisible>
-        <motion.div className="mt-[40px] flex gap-[20px] md:flex-row flex-col">
+        {/* <motion.div className="mt-[40px] flex gap-[20px] md:flex-row flex-col">
           <motion.button
             className="border-[1px] rounded-[5px] border-contrast1 px-[24px] py-[12px] text-white text-[18px] w-fit"
             variants={slideInFromLeft(0.3)}
@@ -89,7 +89,7 @@ export default function About() {
             <DownloadIcon width={24} height={24} />
             Download CV
           </motion.button>
-        </motion.div>
+        </motion.div> */}
       </motion.div>
       <FadeInRightWhenVisible delay={0.2}>
         <motion.video

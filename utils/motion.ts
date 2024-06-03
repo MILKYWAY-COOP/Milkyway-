@@ -26,20 +26,33 @@ export function slideInFromRight(delay: number) {
   };
 }
 
+export function slideInFromBottom(delay: number) {
+  return {
+    hidden: { y: 100, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        delay: delay,
+        duration: 0.5,
+      },
+    },
+  };
+}
+
 export function Lift() {
   return {
     initial: {
       rotateY: 0,
-      transformOrigin: 'left', // Adjust as needed, e.g., 'center', 'left'
-      transition: { duration: 0.5 } // Adjust timing as needed
+      transformOrigin: "left", // Adjust as needed, e.g., 'center', 'left'
+      transition: { duration: 0.5 }, // Adjust timing as needed
     },
     animate: {
       rotateY: 90, // Rotate the image 90 degrees along the Y-axis
-      transformOrigin: 'left', // Should match the initial state
-      transition: { duration: 0.5 } // Adjust timing as needed
-    }
+      transformOrigin: "left", // Should match the initial state
+      transition: { duration: 0.5 }, // Adjust timing as needed
+    },
   };
-
 }
 
 export const slideInFromTop = {
@@ -63,7 +76,7 @@ export const slideBracketRight = {
     x: 5,
     opacity: 1,
     transition: {
-      x: { duration: 0.5, ease: 'easeOut' },
+      x: { duration: 0.5, ease: "easeOut" },
       opacity: { duration: 0.2 },
     },
   },
@@ -78,7 +91,7 @@ export const slideBracketLeft = {
     x: -10,
     opacity: 1,
     transition: {
-      x: { duration: 0.5, ease: 'easeOut' },
+      x: { duration: 0.5, ease: "easeOut" },
       opacity: { duration: 0.2 },
     },
   },

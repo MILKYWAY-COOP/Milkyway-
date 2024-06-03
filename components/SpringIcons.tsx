@@ -18,10 +18,10 @@ import {
   SiMysql,
   SiStripe,
 } from "react-icons/si";
+import NextIcon from "@/public/next-js.svg";
+import ReactNative from "@/public/native.svg";
 import { FaNode, FaVuejs, FaAws } from "react-icons/fa";
-import { TbBrandNextjs, TbBrandReactNative } from "react-icons/tb";
 import { distance } from "@popmotion/popcorn";
-import NIcon from "@/assets/nextjs.svg";
 
 const Square = ({
   active,
@@ -113,11 +113,11 @@ export default function SpringIcons() {
   const y = useMotionValue(0);
 
   const gridIcons = [
-    [SiJavascript, FaNode, SiTypescript, SiPrisma],
-    [SiStripe, SiReact, NIcon, TbBrandReactNative],
-    [SiNestjs, FaVuejs, SiPostgresql, SiMysql],
-    [SiMongodb, SiFirebase, FaAws, SiGooglecloud],
-    [SiTailwindcss, SiStrapi, TbBrandNextjs],
+    [SiJavascript, FaNode, SiTypescript, SiNestjs],
+    [SiReact, NextIcon, ReactNative, FaVuejs],
+    [SiPrisma, SiMongodb, SiPostgresql, SiMysql],
+    [SiStripe, SiFirebase, FaAws, SiGooglecloud],
+    [SiTailwindcss, SiStrapi],
   ];
 
   const context = useContext(AppContext);

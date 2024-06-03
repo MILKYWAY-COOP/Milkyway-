@@ -42,6 +42,8 @@ const config: Config = {
       },
       fontFamily: {
         comfota: ["Poppins", "sans-serif"],
+        blogTitle: ["Playfair Display", "sans-serif"],
+        blogBody: ["Outfit", "serif"],
       },
       screens: {
         sm: "640px",

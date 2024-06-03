@@ -22,6 +22,10 @@ export default function Nav() {
   const navItems = ["Services", "Giving Back", "Work", "Blog", "Contact Us"];
 
   const scrollToSection = (sectionId: string) => {
+    if (window.location.pathname !== "/") {
+      window.location.href = "/";
+    }
+
     const section = document.getElementById(sectionId) as HTMLElement;
     section.scrollIntoView({ behavior: "smooth" });
   };
@@ -58,7 +62,7 @@ export default function Nav() {
         }`}
       >
         <motion.div
-          className={`border-b-[1px] flex gap-4 ${
+          className={`border-b-[1px] border-white flex gap-4 ${
             screen === "md"
               ? "text-[13px]  py-[16px]"
               : "text-[14px]  py-[18px]"

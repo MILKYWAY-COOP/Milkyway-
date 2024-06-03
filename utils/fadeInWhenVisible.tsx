@@ -1,16 +1,16 @@
-import { useEffect } from 'react';
-import { motion, useAnimation } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+import { useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
-function FadeInWhenVisible({ className, children }: any) {
+function FadeInWhenVisible({ className, children, delay }: any) {
   const controls = useAnimation();
   const [ref, inView] = useInView();
 
   useEffect(() => {
     if (inView) {
-      controls.start('visible');
+      controls.start("visible");
     } else {
-      controls.start('hidden');
+      controls.start("hidden");
     }
   }, [controls, inView]);
 
@@ -19,7 +19,7 @@ function FadeInWhenVisible({ className, children }: any) {
       ref={ref}
       animate={controls}
       initial="hidden"
-      transition={{ duration: 0.3 }}
+      transition={{ duration: 0.3, delay: delay }}
       className={className}
       variants={{
         hidden: {
@@ -48,9 +48,9 @@ export function FadeInRightWhenVisible({ className, children, delay }: any) {
 
   useEffect(() => {
     if (inView) {
-      controls.start('visible');
+      controls.start("visible");
     } else {
-      controls.start('hidden');
+      controls.start("hidden");
     }
   }, [controls, inView]);
 
@@ -86,9 +86,9 @@ export function FadeInLeftWhenVisible({ className, children, delay }: any) {
 
   useEffect(() => {
     if (inView) {
-      controls.start('visible');
+      controls.start("visible");
     } else {
-      controls.start('hidden');
+      controls.start("hidden");
     }
   }, [controls, inView]);
 

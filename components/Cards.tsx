@@ -59,6 +59,7 @@ export default function Cards() {
             key={index}
             className="w-full md:w-[300px] h-auto rounded-[10px] border-[2px] border-contrast2 p-[20px] md:px-[40px] md:py-[32px] overflow-hidden relative flex flex-col gap-[28px]"
             layoutId={index.toString()}
+            delay={0.1 * index}
           >
             <motion.div className="flex align-center gap-[16px]">
               <category.icon width={48} height={48} />
