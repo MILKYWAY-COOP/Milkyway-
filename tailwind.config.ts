@@ -20,11 +20,13 @@ const config: Config = {
           "linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url('/milkysky4.webp')",
         "custom-bg5":
           "linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url('/flag.jpeg')",
+        "custom-bg6":
+          "linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url('/blackboard.jpeg')",
         stars: "url('/bg.png')",
         koimbi: "url('/Koimbi.png')",
       },
       colors: {
-        white: "#ffffff",
+        white: "#fff",
         darkBlue: "#15194B",
         fadedDarkBlue: "rgba(4, 3, 57, 0.9)",
         turquoise: "rgb(0, 255, 255)",
@@ -43,7 +45,7 @@ const config: Config = {
       fontFamily: {
         comfota: ["Poppins", "sans-serif"],
         blogTitle: ["Playfair Display", "sans-serif"],
-        blogBody: ["Outfit", "serif"],
+        blogBody: ["Poppins", "sans-serif"],
       },
       screens: {
         sm: "640px",
