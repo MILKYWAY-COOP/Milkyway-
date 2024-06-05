@@ -58,33 +58,30 @@ export default function App() {
 }`}
     />
 
-    <BT.H2 className="text-xl mb-4">Use Cases for Zustand</BT.H2>
-    <BT.P className="text-lg leading-relaxed">
-      Zustand is versatile and can be used in various scenarios where state
-      management is required. Some common use cases include:
-    </BT.P>
-    <BT.UL className="list-disc pl-5 mb-4">
-      <BT.LI>
-        Global state management for small to medium-sized applications
-      </BT.LI>
-      <BT.LI>Managing state in complex components or feature modules</BT.LI>
-      <BT.LI>Replacing Context API for more performance and simplicity</BT.LI>
-      <BT.LI>Handling local component state with more control and ease</BT.LI>
-    </BT.UL>
-    <BT.P className="text-[16px] leading-relaxed mt-4 mb-4">
-      Zustand&apos;s simplicity and flexibility make it an excellent choice for
-      managing state in React applications without the overhead of more complex
-      libraries.
-    </BT.P>
-
-    <BT.H2 className="text-[16px]">Conclusion</BT.H2>
-    <BT.P className="text-[16px] leading-relaxed">
-      Zustand provides a simple yet powerful way to manage state in React
-      applications. Its minimalistic API and straightforward approach make it a
-      great alternative to other state management solutions. Whether you&apos;re
-      building a small project or a larger application, Zustand can help you
-      manage your state with ease.
-    </BT.P>
+    <div className="flex flex-col gap-4 mt-4">
+      <BT.H2 className="pt-4 text-[20px] mb-4">Use Cases for Zustand</BT.H2>
+      <BT.P className="text-lg leading-relaxed">
+        Zustand is versatile and can be used in various scenarios where state
+        management is required. Some common use cases include:
+      </BT.P>
+      <BT.UL className="">
+        <BT.LI>
+          Global state management for small to medium-sized applications
+        </BT.LI>
+        <BT.LI>Managing state in complex components or feature modules</BT.LI>
+        <BT.LI>Replacing Context API for more performance and simplicity</BT.LI>
+        <BT.LI>Handling local component state with more control and ease</BT.LI>
+      </BT.UL>
+      <BT.P className="text-[16px] leading-relaxed mt-4 mb-4">
+        Zustand&apos;s simplicity and flexibility make it an excellent choice
+        for managing state in React applications without the overhead of more
+        complex libraries. Zustand provides a simple yet powerful way to manage
+        state in React applications. Its minimalistic API and straightforward
+        approach make it a great alternative to other state management
+        solutions. Whether you&apos;re building a small project or a larger
+        application, Zustand can help you manage your state with ease.
+      </BT.P>
+    </div>
   </div>
 );
 
