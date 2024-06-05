@@ -28,8 +28,10 @@ const Page: React.FC<PageProps> = (props) => {
   }
 
   return (
-    <div className="w-full h-fit bg-skyBlue">
-      <div className="sm:w-[640px] md:w-[768px] lg:w-[1280px] flex flex-col items-center justify-center px-[20px] self-center mx-auto ">
+    <div className="w-full h-fit bg-custom-bg6 bg-fixed">
+      <div
+        className="sm:w-[640px] md:w-[768px] lg:w-[1280px] flex flex-col items-center justify-center px-[20px] self-center mx-auto "
+      >
         <Nav />
         <div className="w-full mt-[40px] flex flex-col text-center">
           <h4 className="text-[20px] font-[300px] text-contrast1 bold">
