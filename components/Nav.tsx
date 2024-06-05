@@ -21,7 +21,7 @@ export default function Nav() {
   const [isHovered, setIsHovered] = useState<string | null>(null);
   const navItems = ["Services", "Giving Back", "Work", "Blog", "Contact Us"];
 
-  const scrollToSection = (sectionId: string) => {
+  const scrollToSection = (sectionId: string) => { 
     if (window.location.pathname !== "/") {
       window.location.href = "/";
     }
